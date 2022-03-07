@@ -13,28 +13,28 @@ export default function NavBar({ IsElement }) {
 
     return (
         <IsElement>
-            <div class='container'>
+            <div className='container'>
 
-                <div class='search-input-ctn'>
-                    <label for='cocktail-search' class='screen-reader-text'>Find a cocktail</label>
+                <div className='search-input-ctn'>
+                    <label htmlFor='cocktail-search' className='screen-reader-text'>Find a cocktail</label>
                     <input
                         type='search'
                         name='cocktail-search'
                         placeholder='Rechercher un cocktail'
                         aria-label="Rechercher un cocktail"
-                        class='search'
+                        className='search'
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <button type='submit' class='loupe'
+                    <button type='submit' className='loupe'
                         onClick={() => handleSearch}
                     >
-                        <span class='screen-reader-text'>Lancer la recherche</span>
+                        <span className='screen-reader-text'>Lancer la recherche</span>
                         <Loupe />
                     </button>
                 </div>
 
                 <nav>
-                    <ul class='menu'>
+                    <ul className='menu'>
                         <li>
                             <Link to='/'>Home</Link>
                         </li>
