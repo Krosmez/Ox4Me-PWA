@@ -20,7 +20,7 @@ export default function CocktailList() {
         );
     }, []);
     return (
-        <main class='container'>
+        <main className='container'>
             <ul className='cocktail-list '>
                 {
                     !drinks ? 'Chargement' :

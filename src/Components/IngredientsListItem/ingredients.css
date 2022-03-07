@@ -108,3 +108,24 @@ input[type=checkbox].heart:checked {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+@media (min-width: 62em) {
+    .cocktail-only {
+        min-width: 45%;
+    }
+    .cocktail-top-info img {
+        margin-right: unset;
+        min-width: 20rem;
+        min-height: 20rem;
+    }
+    .cocktail-only h3 {
+        font-size: 2em;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .ingredients-container li,
+    .cocktail-details {
+        font-size: 1.4em;    
+    }
+
+}

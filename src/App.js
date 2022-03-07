@@ -32,7 +32,7 @@ function App() {
       {/* <main> */}
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/cocktail/:id' element={<Cocktail />} />
+          <Route path='/cocktail/:id' element={<Cocktail screenWidth={screenWidth} />} />
           <Route path='/random' element={<RandomCocktail />} />
           <Route path='/list' element={<CocktailList />} />
           <Route path='/favorites' element={<FavoritesList />} />
