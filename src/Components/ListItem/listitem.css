@@ -40,6 +40,6 @@
         gap: 10px;
     }
     .cocktail-list-item{
-        flex:max(200px, 100%/5 + 0.1%);
+        flex:max(200px, 100%/4 + 0.1%);
     }
 }
