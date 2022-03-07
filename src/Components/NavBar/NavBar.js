@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ReactComponent as Loupe } from '../../img/loupe.svg'
@@ -26,7 +27,7 @@ export default function NavBar({ IsElement }) {
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
                     <button type='submit' className='loupe'
-                        onClick={() => handleSearch}
+                        onClick={handleSearch}
                     >
                         <span className='screen-reader-text'>Lancer la recherche</span>
                         <Loupe />

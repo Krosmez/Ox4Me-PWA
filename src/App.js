@@ -9,6 +9,7 @@ import Home from './Views/Home';
 import RandomCocktail from './Views/RandomCocktail';
 
 function App() {
+  
   return (
     <>
       <NavBar IsElement='header' />
