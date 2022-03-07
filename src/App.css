@@ -1,53 +1,111 @@
 :root {
-  --background:#191919;
-  --foreground:#ffffff;
-  --primary:#BE995B;
-  --secondary:#B28564;
-  --dark-gray:#B2B2B2;
-  --light-gray:#EBEBEB;
-  --gray:#C1C1C1;
-  --active-primary:#1A73E8;
-  --active-secondary:#4D90FE;
-  --light-red:#FF1B1B;
-  --pinky-red:#E24A4A;
-  --orange-red:#D14836;
+  --background: #191919;
+  --foreground: #ffffff;
+  --primary: #BE995B;
+  --secondary: #B28564;
+  --dark-gray: #B2B2B2;
+  --light-gray: #EBEBEB;
+  --gray: #C1C1C1;
+  --active-primary: #1A73E8;
+  --active-secondary: #4D90FE;
+  --light-red: #FF1B1B;
+  --pinky-red: #E24A4A;
+  --orange-red: #D14836;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 .container {
   max-width: 32.5rem;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (min-width: 36em) {
+
   /* 36em * 16 = 576px */
   .container {
-      max-width: 50rem;
+    max-width: 50rem;
   }
 }
 
 @media (min-width: 48em) {
+
   /* 48em * 16 = 768px */
   .container {
-      max-width: 70rem;
+    max-width: 70rem;
   }
 }
 
 @media (min-width: 62em) {
+
   /* 62em * 16 = 992px */
   .container {
-      max-width: 90rem;
+    max-width: 90rem;
   }
 }
 
 @media (min-width: 75em) {
+
   /* 75em * 16 = 1200px */
   .container {
-      max-width: 100rem;
+    max-width: 100rem;
   }
 }
 
 @media (min-width: 105em) {
   .container {
-      max-width: 128rem;
+    max-width: 128rem;
+  }
+}
+
+/* Home View */
+
+.hero {
+  margin-bottom: 10px;
+}
+
+.home-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-list a {
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, var(--primary), #E9A770, #FFB48D, #FFC1B3);
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 30px;
+  text-decoration: none;
+  color: var(--foreground);
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: ease-in-out all .4s;
+}
+
+.home-list a:visited {
+  color: var(--foreground);
+}
+
+@media (min-width: 48em) {
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero,
+  .home-list a {
+    margin-bottom: 30px;
+  }
+
+  .home-list a:hover {
+    background-position: 100% 0;
+    color: var(--background);
   }
 }

@@ -24,6 +24,7 @@ export default function NavBar({ IsElement }) {
                         placeholder='Rechercher un cocktail'
                         aria-label="Rechercher un cocktail"
                         className='search'
+                        value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
                     <button type='submit' className='loupe'
