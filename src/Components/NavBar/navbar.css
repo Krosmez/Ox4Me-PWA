@@ -1,0 +1,92 @@
+header,
+footer {
+    background-color: var(--background);
+    color: var(--foreground);
+    padding: 10px 0;
+}
+
+.search-input-ctn {
+    position: relative;
+}
+
+.search {
+    border: 1px solid var(--background);
+    border-radius: 5px;
+    min-width: 100%;
+    padding: 5px 10px 5px 30px;
+}
+
+.search:focus {
+    outline:0;
+}
+
+.search::placeholder {
+    color: var(--background);
+}
+
+.search-input-ctn .loupe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border: 0;
+    outline: 0;
+    width: 30px;
+    background-color: transparent;
+}
+
+#loupe {
+    fill: var(--background);
+}
+
+nav {
+    margin-top: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.menu li {
+    flex: max(130px, 100%/4 - 10px);
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.menu li a:visited {
+    color: var(--foreground);
+}
+
+.menu li a.is-active {
+    color: var(--active-primary);
+}
+
+@media (min-width:62em) {
+
+    header .container,
+    footer .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav {
+        margin-top: 0;
+    }
+    .menu {
+        flex-wrap: unset;
+    }
+    
+    .menu li {
+        margin-right: 10px;
+        flex: unset;
+    }
+    .menu li:nth-last-child(1) {
+        margin-right: 0px;
+    }
+}

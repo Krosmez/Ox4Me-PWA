@@ -11,14 +11,17 @@ import RandomCocktail from './Views/RandomCocktail';
 function App() {
   return (
     <>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/random' element={<RandomCocktail />} />
-        <Route path='/list' element={<CocktailList />} />
-        <Route path='/favorites' element={<FavoritesList />} />
-        <Route path='/cocktail/:id' element={<Cocktail />} />
-      </Routes>
+      <NavBar IsElement='header' />
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/random' element={<RandomCocktail />} />
+          <Route path='/list' element={<CocktailList />} />
+          <Route path='/favorites' element={<FavoritesList />} />
+          <Route path='/cocktail/:id' element={<Cocktail />} />
+        </Routes>
+      </main>
+      <NavBar IsElement='footer' />
     </>
   );
 }
