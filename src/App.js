@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import NavBar from './Components/NavBar/NavBar';
+import Cocktail from './Views/Cocktail';
+import CocktailList from './Views/CocktailList';
+import FavoritesList from './Views/FavoritesList';
+import Home from './Views/Home';
+import RandomCocktail from './Views/RandomCocktail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/random' element={<RandomCocktail />} />
+        <Route path='/list' element={<CocktailList />} />
+        <Route path='/favorites' element={<FavoritesList />} />
+        <Route path='/cocktail/:id' element={<Cocktail />} />
+      </Routes>
+    </>
   );
 }
 
