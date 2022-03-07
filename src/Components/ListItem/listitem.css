@@ -1,0 +1,45 @@
+.cocktail-list-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.cocktail-link {
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    color: initial;
+    font-size: 1.2em;
+}
+.cocktail-link:visited,
+.cocktail-link:active {
+    color: initial;
+}
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-container svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.icon-container .next path {
+    fill: #000;
+}
+
+@media (min-width:62em) {
+    .cocktail-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .cocktail-list-item{
+        flex:max(200px, 100%/5 + 0.1%);
+    }
+}

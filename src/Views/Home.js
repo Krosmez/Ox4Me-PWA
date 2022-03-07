@@ -1,9 +1,10 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import Logo from '../img/oxford-white.png'
 
 export default function Home() {
     return (
-        <>
+        <main>
             <div className='hero'>
                 <img src={Logo} alt="Logo de l'Oxford Pub" className="container" />
             </div>
@@ -12,6 +13,6 @@ export default function Home() {
                 <Link to='/random'>Cocktail aléatoire</Link>
                 <Link to='/favorites'>Vos favoris</Link>
             </section>
-        </>
+        </main>
     )
 }

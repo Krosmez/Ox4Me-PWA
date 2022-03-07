@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import NavBar from './Components/NavBar/NavBar';
@@ -9,11 +10,26 @@ import Home from './Views/Home';
 import RandomCocktail from './Views/RandomCocktail';
 
 function App() {
-  
+  const [screenWidth, setScreenWidth] = useState('');
+
+  useEffect(() => {
+    function timeResize() {
+      setTimeout(
+        setScreenWidth(window.screen.width), 300
+      )
+    }
+    timeResize();
+    clearTimeout(timeResize);
+    window.addEventListener('resize', timeResize);
+    return () => {
+      window.removeEventListener('resize', timeResize);
+    }
+  }, [screenWidth])
+
   return (
     <>
       <NavBar IsElement='header' />
-      <main>
+      {/* <main> */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/random' element={<RandomCocktail />} />
@@ -21,7 +37,7 @@ function App() {
           <Route path='/favorites' element={<FavoritesList />} />
           <Route path='/cocktail/:id' element={<Cocktail />} />
         </Routes>
-      </main>
+      {/* </main> */}
       <NavBar IsElement='footer' />
     </>
   );
