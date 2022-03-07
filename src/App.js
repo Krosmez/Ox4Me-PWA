@@ -32,10 +32,10 @@ function App() {
       {/* <main> */}
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/cocktail/:id' element={<Cocktail />} />
           <Route path='/random' element={<RandomCocktail />} />
           <Route path='/list' element={<CocktailList />} />
           <Route path='/favorites' element={<FavoritesList />} />
-          <Route path='/cocktail/:id' element={<Cocktail />} />
         </Routes>
       {/* </main> */}
       <NavBar IsElement='footer' />

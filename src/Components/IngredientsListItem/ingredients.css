@@ -1,0 +1,110 @@
+.cocktail-only {
+    font-family: 'Roboto Slab';
+
+}
+.cocktail-only h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight:700;
+    color: var(--primary);
+}
+
+.cocktail-top-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cocktail-top-info img {
+    max-width: 50%;
+    margin-right: 10px;
+    object-fit: contain;
+    min-height: 15rem;
+}
+
+.cocktail-details {
+    color: var(--primary);
+    font-family: 'Roboto Slab';
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.cocktail-details p {
+    font-style: italic;
+}
+
+.ingredients-container li {
+    display: flex;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.ingredients-container li:not(:last-child) {
+    border-bottom: 1px solid var(--primary);
+}
+
+.icon-and-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-and-btn label[for=already-drink] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: .9em;
+}
+label::selection {
+    background-color: unset;
+    color: unset;
+}
+input[type=checkbox] {
+    background-color: var(--background);
+    border-radius: 2px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    background: transparent url(../../img/crossed-primary.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+input[type=checkbox]:checked {
+    background: url(../../img/check-unboxed-primary.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+label[for='like'] {
+    display: flex;
+    align-items: center;
+}
+input[type=checkbox].heart {
+    width: 30px;
+    height: 30px;
+    background: transparent url(../../img/heart.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+input[type=checkbox].heart:checked {
+    background: url(../../img/heart-fill.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

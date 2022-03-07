@@ -29,10 +29,6 @@
     cursor: pointer;
 }
 
-.icon-container .next path {
-    fill: #000;
-}
-
 @media (min-width:62em) {
     .cocktail-list {
         display: flex;

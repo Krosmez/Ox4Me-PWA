@@ -28,7 +28,7 @@ export default function CocktailList() {
                             return (
                                 <ListItem
                                     key={index}
-                                    to={`cocktail/${el.id}`}
+                                    to={`/cocktail/${el.id}`}
                                     name={el.name}
                                 />
 

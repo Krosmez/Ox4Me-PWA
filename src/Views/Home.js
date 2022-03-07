@@ -5,6 +5,7 @@ import Logo from '../img/oxford-white.png'
 export default function Home() {
     return (
         <main>
+            <h1 class='ir'>Ox4Me</h1>
             <div className='hero'>
                 <img src={Logo} alt="Logo de l'Oxford Pub" className="container" />
             </div>

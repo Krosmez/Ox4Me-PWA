@@ -14,7 +14,7 @@ import './listitem.css'
 // PS : (Et je suis en qwerty flemme de faire les accents <3)
 
 export default function ListItem({ to, name}) {
-    const [isDrink, setIsDrink] = useState()
+    const [isDrink, setIsDrink] = useState(false)
     const [isLike, setIsLike] = useState()
     return (
         <li className='cocktail-list-item'>
@@ -24,9 +24,9 @@ export default function ListItem({ to, name}) {
             <div className='icon-container'>
                 {
                     isDrink ?
-                        <CheckBox onClick={() => setIsDrink(!isDrink)} />
+                        <CheckBox/>
                         :
-                        <Cross onClick={() => setIsDrink(!isDrink)} />
+                        <Cross/>
                 }
                 {
                     isLike ?
