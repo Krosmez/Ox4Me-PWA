@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import ListItem from "../Components/ListItem/ListItem"
+import CocktailItem from "../Components/CocktailItem/CocktailItem"
 import OxAPI from "../data/OxAPI";
 
 export default function CocktailList() {
@@ -29,10 +29,9 @@ export default function CocktailList() {
                     {
                         drinks.map((el, index) => {
                             return (
-                                <ListItem
+                                <CocktailItem
                                     key={index}
-                                    to={`/cocktail/${el.id}`}
-                                    name={el.name}
+                                    data={el}
                                 />
 
                             )

@@ -4,17 +4,38 @@ import { useParams } from 'react-router-dom';
 import IngredientListItem from '../Components/IngredientsListItem/IngredientListItem';
 import OxAPI from '../data/OxAPI';
 import Logo from '../img/oxford-white.png'
+import StorageTools from "../data/StorageTools";
 
 
 export default function Cocktail() {
-    const [isChecked, setIsChecked] = useState(false);
-    const [isLike, setIsLike] = useState(false);
+    const params = useParams();
+
+    const [isConsumed, setIsConsumed] = useState(false);
+    const [isLike, setIsLike] = useState(StorageTools.containsFavoriteDrink(params.id));
     const [drinkName, setDrinkName] = useState("");
     const [drinkCategory, setDrinkCategory] = useState("");
     // const [drinkImg, setDrinkImg] = useState("");
     const [ingredients, setIngredients] = useState([]);
 
-    let params = useParams();
+    function addRemoveLike() {
+        if (!StorageTools.containsFavoriteDrink(params.id)) {
+            StorageTools.addFavoriteDrink(params.id);
+            setIsLike(true);
+        } else {
+            StorageTools.removeFavoriteDrink(params.id);
+            setIsLike(false);
+        }
+    }
+
+    function setResetConsumed() {
+        if (!StorageTools.containsConsumedDrink(params.id)) {
+            StorageTools.addConsumedDrink(params.id);
+            setIsConsumed(true);
+        } else {
+            StorageTools.removeConsumedDrink(params.id);
+            setIsConsumed(false);
+        }
+    }
 
     useEffect( () => {
         OxAPI.getDrinkDetails(params.id).then(({name, category, ingredients}) => {
@@ -42,11 +63,12 @@ export default function Cocktail() {
                     </div>
 
                     <div className='icon-and-btn'>
-                        <label htmlFor='already-drink' onClick={() => setIsChecked(!isChecked)}>
-                            Jamais testé
-                            <input type='checkbox' name='already-drink' checked={isChecked} readOnly />
+                        <label htmlFor='already-drink' onClick={setResetConsumed}>
+                            <input type='checkbox' name='already-drink' checked={isConsumed} readOnly />
+                            &nbsp;
+                            {isConsumed ? "Déjà bû" : "Jamais testé"}
                         </label>
-                        <label htmlFor='like' onClick={() => setIsLike(!isLike)}>
+                        <label htmlFor='like' onClick={addRemoveLike}>
                             <input type='checkbox' name='like' className='heart' checked={isLike} readOnly />
                         </label>
                     </div>
