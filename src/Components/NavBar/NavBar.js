@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { ReactComponent as Loupe } from '../../img/loupe.svg'
 import './navbar.css'
@@ -16,18 +16,18 @@ export default function NavBar({ IsElement }) {
         <IsElement>
             <div className='container'>
 
-                <div className='search-input-ctn'>
+                <div className='search-input-ctn '>
                     <label htmlFor='cocktail-search' className='screen-reader-text'>Find a cocktail</label>
                     <input
                         type='search'
                         name='cocktail-search'
+                        className='search'
                         placeholder='Rechercher un cocktail'
                         aria-label="Rechercher un cocktail"
-                        className='search'
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <button type='submit' className='loupe'
+                    <button type='submit' className='btn '
                         onClick={handleSearch}
                     >
                         <span className='screen-reader-text'>Lancer la recherche</span>
@@ -38,16 +38,16 @@ export default function NavBar({ IsElement }) {
                 <nav>
                     <ul className='menu'>
                         <li>
-                            <Link to='/'>Home</Link>
+                            <NavLink to='/'>Home</NavLink>
                         </li>
                         <li>
-                            <Link to='/list'>La liste</Link>
+                            <NavLink to='/list'>La liste</NavLink>
                         </li>
                         <li>
-                            <Link to='/random'>Cocktail aléatoire</Link>
+                            <NavLink to='/random'>Cocktail aléatoire</NavLink>
                         </li>
                         <li>
-                            <Link to='/favorites'>Vos favoris</Link>
+                            <NavLink to='/favorites'>Vos favoris</NavLink>
                         </li>
                     </ul>
                 </nav>

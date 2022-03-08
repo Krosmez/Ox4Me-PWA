@@ -24,7 +24,7 @@ export default function FavoritesList() {
     }, [drinks]);
 
     if (drinks.length < 1) {
-        return <p>Vous n'avez pas de boisson favorite ...</p>;
+        return <p class='container'>Vous n'avez pas de boisson favorite ...</p>;
     } else {
         return (
             <main className='container'>

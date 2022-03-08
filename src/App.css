@@ -14,8 +14,13 @@
 }
 
 body {
-  background-color: var(--background);
   color: var(--foreground);
+  background-color: var(--background);
+}
+
+body main {
+  font-family: "Roboto", "serif";
+  font-weight: 400;
 }
 
 .container {
@@ -66,6 +71,7 @@ body {
 
 .hero {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .home-list {
@@ -74,16 +80,15 @@ body {
 }
 
 .home-list a {
-  background-size: 200% 100%;
-  background-image: linear-gradient(to right, var(--primary), #E9A770, #FFB48D, #FFC1B3);
-  text-align: center;
   margin-bottom: 10px;
   padding: 30px;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, var(--primary), #E9A770, #FFB48D, #FFC1B3);
   text-decoration: none;
+  text-align: center;
   color: var(--foreground);
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 600;
-  transition: ease-in-out all .4s;
 }
 
 .home-list a:visited {
@@ -93,22 +98,35 @@ body {
 @media (min-width: 48em) {
 
   #root {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100vh;
   }
 
-  .hero,
+  .home-list {
+    flex-direction: initial;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   .home-list a {
+    flex: max(350px, 100%/2 - 10px);
+    border-radius: 5px;
+    transition: ease-in-out all .4s;
+  }
+
+  .hero {
     margin-bottom: 30px;
   }
 
   .home-list a:hover {
-    background-position: 100% 0;
     color: var(--background);
+    background-position: 100% 0;
   }
 }
+
+/* Button / Links  */
 
 .btn-random-ctn {
   display: flex;
@@ -119,22 +137,23 @@ body {
 }
 
 .btn {
+  flex: max(200px, 100%/4 - 10px);
+  padding: 10px;
   color: var(--foreground);
   background-color: var(--primary);
+  border: 0;
+  border-radius: 5px;
   font-size: 1em;
-  font-family: 'Roboto';
   font-weight: 700;
   text-align: center;
   text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
-  flex: max(200px, 100%/4 - 10px);
-  border: 0;
 }
+
 .btn.disabled, .btn:disabled {
-  background-color: var(--gray);
   color: var(--background);
+  background-color: var(--gray);
 }
+
 .btn:first-child {
   min-width: 100%;
 }

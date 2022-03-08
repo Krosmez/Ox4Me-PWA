@@ -30,7 +30,7 @@ function App() {
     <>
       <NavBar IsElement='header' />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home screenWidth={screenWidth}/>} />
         <Route path='/cocktail/:id' element={<Cocktail screenWidth={screenWidth} />} />
         <Route path='/random' element={<RandomCocktail />} />
         <Route path='/list' element={<CocktailList />} />

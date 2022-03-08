@@ -1,43 +1,64 @@
 header,
 footer {
-    background-color: var(--background);
-    color: var(--foreground);
     padding: 20px 0;
 }
+
+/* SearchBar */
 
 .search-input-ctn {
     position: relative;
 }
 
 .search {
-    border: 1px solid var(--background);
-    border-radius: 5px;
+    padding: 5px 12%;
     min-width: 100%;
-    padding: 5px 10px 5px 30px;
+    border-radius: 5px;
+    border: 0;
 }
 
 .search:focus {
-    outline:0;
+    outline: 0;
 }
 
 .search::placeholder {
     color: var(--background);
 }
 
-.search-input-ctn .loupe {
+.search-input-ctn .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
+    padding: unset;
+    min-width: 10%;
     border: 0;
+    border-radius: unset;
+    border-right: 1px solid var(--background);
     outline: 0;
-    width: 30px;
     background-color: transparent;
 }
 
 #loupe {
     fill: var(--background);
+    width: 20px;
+    height: 20px;
 }
+
+@media (min-width:48em) {
+
+    .search {
+        padding: 5px 27%;
+    }
+
+    .search-input-ctn .btn {
+        min-width: 25%;
+    }
+}
+
+/* navigation */
 
 nav {
     margin-top: 10px;
@@ -45,26 +66,33 @@ nav {
 
 .menu {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    overflow-x: scroll;
+    overflow-y: auto;
+    white-space: nowrap;
 }
 
 .menu li {
-    flex: max(130px, 100%/4 - 10px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.menu li:first-child {
+    padding-left: unset;
 }
 
 .menu li a {
-    text-decoration: none;
     color: var(--foreground);
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
 .menu li a:visited {
     color: var(--foreground);
 }
 
-.menu li a.is-active {
+.menu li a.active {
     color: var(--active-primary);
+    border-bottom: 1px solid var(--active-primary);
 }
 
 @media (min-width:62em) {
@@ -75,18 +103,13 @@ nav {
         align-items: center;
         justify-content: space-between;
     }
+
     nav {
         margin-top: 0;
     }
-    .menu {
-        flex-wrap: unset;
-    }
-    
-    .menu li {
-        margin-right: 10px;
-        flex: unset;
-    }
+
     .menu li:nth-last-child(1) {
+        padding-right: 0px;
         margin-right: 0px;
     }
 }
