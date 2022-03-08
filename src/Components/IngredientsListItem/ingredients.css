@@ -1,14 +1,13 @@
 .cocktail-only {
-    font-family: 'Roboto Slab';
-
+    font-family: 'Roboto Slab', 'serif';
+    color: var(--foreground);
 }
+
 .cocktail-only h3 {
+    margin: 20px auto;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    font-weight:700;
-    color: var(--primary);
+    font-size: 1.5em;
+    font-weight: 700;
 }
 
 .cocktail-top-info {
@@ -17,20 +16,19 @@
 }
 
 .cocktail-top-info img {
-    max-width: 50%;
     margin-right: 10px;
-    object-fit: contain;
+    max-width: 50%;
     min-height: 15rem;
+    object-fit: contain;
 }
 
 .cocktail-details {
-    color: var(--primary);
-    font-family: 'Roboto Slab';
-    font-size: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    min-width: 45%;
+    color: var(--foreground);
+    font-family: 'Roboto Slab';
 }
 
 .cocktail-details p {
@@ -45,7 +43,7 @@
 }
 
 .ingredients-container li:not(:last-child) {
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
 }
 
 .icon-and-btn {
@@ -58,28 +56,37 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    border-radius: 5px;
+    min-width: 11.5rem;
     padding: 5px;
-    font-size: .9em;
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+    border-radius: 5px;
+    font-size: 0.9em;
 }
+
+label[for=already-drink].checked {
+    color: var(--primary);
+    background-color: var(--secondary);
+    border: 1px solid var(--background);
+}
+
 label::selection {
     background-color: unset;
     color: unset;
 }
+
 input[type=checkbox] {
-    background-color: var(--background);
-    border-radius: 2px;
-    appearance: none;
+    position: relative;
     width: 20px;
     height: 20px;
-    cursor: pointer;
-    position: relative;
+    background-color: var(--background);
     background: transparent url(../../img/crossed-primary.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 2px;
+    appearance: none;
+    cursor: pointer;
 }
 
 input[type=checkbox]:checked {
@@ -93,6 +100,7 @@ label[for='like'] {
     display: flex;
     align-items: center;
 }
+
 input[type=checkbox].heart {
     width: 30px;
     height: 30px;
@@ -110,22 +118,29 @@ input[type=checkbox].heart:checked {
 }
 
 @media (min-width: 62em) {
-    .cocktail-only {
-        min-width: 45%;
-    }
+
     .cocktail-top-info img {
         margin-right: unset;
         min-width: 20rem;
         min-height: 20rem;
     }
+
     .cocktail-only h3 {
         font-size: 2em;
         margin-top: 50px;
         margin-bottom: 50px;
     }
+
+    .cocktail-details { 
+        min-width: unset;
+    }
+    .cocktail-details h2 {
+        max-width: 16ch;
+    }
+
     .ingredients-container li,
     .cocktail-details {
-        font-size: 1.4em;    
+        font-size: 1.4em;
     }
 
 }

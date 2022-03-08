@@ -63,7 +63,7 @@ export default function Cocktail() {
                     </div>
 
                     <div className='icon-and-btn'>
-                        <label htmlFor='already-drink' onClick={setResetConsumed}>
+                        <label htmlFor='already-drink' onClick={setResetConsumed} className={!isConsumed ? '' : 'checked'}>
                             <input type='checkbox' name='already-drink' checked={isConsumed} readOnly />
                             &nbsp;
                             {!isConsumed ? "Jamais testé" : "Déjà bû"}

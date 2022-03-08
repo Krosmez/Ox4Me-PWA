@@ -1,13 +1,10 @@
 :root {
-  --background: #191919;
-  --foreground: #ffffff;
-  --primary: #12582c;
-  --secondary: #B28564;
-  --dark-gray: #B2B2B2;
-  --light-gray: #EBEBEB;
+  --background: #3C2F2F;
+  --foreground: #FFF4E6;
+  --primary: #854442;
+  --secondary: #BE9B7B;
   --gray: #C1C1C1;
-  --active-primary: #1A73E8;
-  --active-secondary: #4D90FE;
+  --active-primary: #FFF4E6;
   --light-red: #FF1B1B;
   --pinky-red: #E24A4A;
   --orange-red: #D14836;
@@ -83,7 +80,7 @@ body main {
   margin-bottom: 10px;
   padding: 30px;
   background-size: 200% 100%;
-  background-image: linear-gradient(to right, var(--primary), #9CB641, #25C465);
+  background-image: linear-gradient(to right, var(--secondary), var(--primary));
   text-decoration: none;
   text-align: center;
   color: var(--foreground);

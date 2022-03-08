@@ -8,7 +8,7 @@ export default function RandomCocktail() {
         {"text": "Fortement alcoolisé"},
         {"text": "Peu alcoolisé"},
         {"text": "Classique", "criterion": "classic"},
-        {"text": "Spécialité Oxford", "criterion": "Homemade"},
+        {"text": "Spécialité Oxford", "criterion": "homemade"},
         {"text": "Sucré"},
         {"text": "Acidulé"},
         {"text": "Favoris seulement"},
