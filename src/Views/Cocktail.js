@@ -6,7 +6,7 @@ import OxAPI from '../data/OxAPI';
 import Logo from '../img/oxford-white.png'
 
 
-export default function Cocktail({ screenWidth }) {
+export default function Cocktail() {
     const [isChecked, setIsChecked] = useState(false)
     const [isLike, setIsLike] = useState(false)
     const [drinkName, setDrinkName] = useState("");
