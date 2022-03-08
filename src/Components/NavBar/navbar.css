@@ -104,6 +104,11 @@ nav {
         justify-content: space-between;
     }
 
+    .menu {
+        overflow-x: unset;
+        overflow-y: unset;
+    }
+
     nav {
         margin-top: 0;
     }

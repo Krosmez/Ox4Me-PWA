@@ -1,20 +1,21 @@
 .cocktail-list-item {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
     background-color: var(--primary);
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 .cocktail-link {
     padding: 10px;
     width: 100%;
+    color: var(--foreground);
     text-decoration: none;
-    color: initial;
     font-size: 1.2em;
 }
 .cocktail-link:visited,
 .cocktail-link:active {
-    color: initial;
+    color: var(--foreground);
+
 }
 .icon-container {
     display: flex;

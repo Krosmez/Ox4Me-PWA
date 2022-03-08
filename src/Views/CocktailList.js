@@ -21,7 +21,7 @@ export default function CocktailList() {
     }, []);
 
     if (drinks.length < 1) {
-        return <p>Chargement...</p>;
+        return <p class='container'>Chargement...</p>;
     } else {
         return (
             <main className='container'>

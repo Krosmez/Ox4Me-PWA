@@ -1,7 +1,7 @@
 :root {
   --background: #191919;
   --foreground: #ffffff;
-  --primary: #BE995B;
+  --primary: #12582c;
   --secondary: #B28564;
   --dark-gray: #B2B2B2;
   --light-gray: #EBEBEB;
@@ -83,7 +83,7 @@ body main {
   margin-bottom: 10px;
   padding: 30px;
   background-size: 200% 100%;
-  background-image: linear-gradient(to right, var(--primary), #E9A770, #FFB48D, #FFC1B3);
+  background-image: linear-gradient(to right, var(--primary), #9CB641, #25C465);
   text-decoration: none;
   text-align: center;
   color: var(--foreground);
@@ -121,12 +121,11 @@ body main {
   }
 
   .home-list a:hover {
-    color: var(--background);
     background-position: 100% 0;
   }
 }
 
-/* Button / Links  */
+/* Button / Links */
 
 .btn-random-ctn {
   display: flex;
@@ -143,8 +142,7 @@ body main {
   background-color: var(--primary);
   border: 0;
   border-radius: 5px;
-  font-size: 1em;
-  font-weight: 700;
+  font-size: 1.2em;
   text-align: center;
   text-decoration: none;
 }

@@ -49,6 +49,12 @@ export default function NavBar({ IsElement }) {
                         <li>
                             <NavLink to='/favorites'>Vos favoris</NavLink>
                         </li>
+                        {
+                            IsElement !== 'footer' ? '' : 
+                                <li>
+                                    <NavLink to='/mentions-legales'>Mentions Légales</NavLink>
+                                </li>
+                        }
                     </ul>
                 </nav>
             </div>
