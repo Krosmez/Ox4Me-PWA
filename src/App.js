@@ -10,12 +10,12 @@ import Home from './Views/Home';
 import RandomCocktail from './Views/RandomCocktail';
 
 function App() {
-  const [screenWidth, setScreenWidth] = useState('');
+  const [screenWidth, setScreenWidth] = useState(Infinity);
 
   useEffect(() => {
     function timeResize() {
       setTimeout(
-        setScreenWidth(window.screen.width), 300
+          () => setScreenWidth(window.screen.width), 300
       )
     }
     timeResize();
@@ -24,7 +24,7 @@ function App() {
     return () => {
       window.removeEventListener('resize', timeResize);
     }
-  }, [screenWidth])
+  }, [screenWidth]);
 
   return (
     <>

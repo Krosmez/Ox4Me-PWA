@@ -1,14 +1,14 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 
 
 export default function FavoritesList() {
-    const [drinks, setDrinks] = useState([]);
+    // const [drinks, setDrinks] = useState([]);
 
-    useEffect( () => {
-        console.log('ouhouhouh')
-    }, []);
+    // useEffect( () => {
+    //     console.log('ouhouhouh')
+    // }, []);
 
     return (
         <main className='container'>

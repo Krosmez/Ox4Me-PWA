@@ -109,3 +109,32 @@ body {
     color: var(--background);
   }
 }
+
+.btn-random-ctn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  color: var(--foreground);
+  background-color: var(--primary);
+  font-size: 1em;
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  flex: max(200px, 100%/4 - 10px);
+  border: 0;
+}
+.btn.disabled, .btn:disabled {
+  background-color: var(--gray);
+  color: var(--background);
+}
+.btn:first-child {
+  min-width: 100%;
+}

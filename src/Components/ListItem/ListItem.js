@@ -14,19 +14,12 @@ import './listitem.css'
 // PS : (Et je suis en qwerty flemme de faire les accents <3)
 
 export default function ListItem({ to, name, data }) {
-    const [isDrink, setIsDrink] = useState(false);
+    const [isDrink] = useState(false);
     const [isLike, setIsLike] = useState(false);
 
-    if(!localStorage.getItem('test')) {
-        localStorage.setItem('test', JSON.stringify(data))
-    }
-
     useEffect(()=> {
-        const newData = Object.defineProperty(data, name, {
-            value: isLike
-        })
-        localStorage.setItem('test', JSON.stringify(newData))
-    }, [isLike])
+        // <Shlygly> : J'ai clear, ça faisait planter le navigateur
+    }, [isLike]);
 
     return (
         <li className='cocktail-list-item'>

@@ -1,66 +1,46 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import Button from '../Components/Button/Button';
-import OxRandomAPI from '../data/OxRandomAPI';
+import OxAPI from '../data/OxAPI';
+import {useNavigate} from "react-router-dom";
 
 export default function RandomCocktail() {
-    const [randomDrink, setRandomDrink] = useState('');
-    const [homemade, setHomemade] = useState('');
-    const [classic, setClassic] = useState('');
-    useEffect(async () => {
-        setRandomDrink(await OxRandomAPI.getRandomDrink());
-        setHomemade(await OxRandomAPI.getDrinkByCategory('homemade'));
-        setClassic(await OxRandomAPI.getDrinkByCategory('classic'));
-    }, []);
+    const randomButtons = [
+        {"text": "Tous cocktails", "criterion": "all"},
+        {"text": "Fortement alcoolisé"},
+        {"text": "Peu alcoolisé"},
+        {"text": "Classique", "criterion": "classic"},
+        {"text": "Spécialité Oxford", "criterion": "Homemade"},
+        {"text": "Sucré"},
+        {"text": "Acidulé"},
+        {"text": "Favoris seulement"},
+        {"text": "A découvrir"},
+        {"text": "La spéciale développeur"}
+    ];
+
+    const navigate = useNavigate();
+
+    async function navigateToRandom(criterion) {
+        const drinkData = await OxAPI.getRandomDrink(criterion);
+        await navigate(`/cocktail/${drinkData.id}`);
+    }
 
     return (
         <main className='container'>
             <div className='btn-random-ctn'>
 
-                <Button
-                    cocktailId={randomDrink}
-                    value='Full Random'
-                />
-                <Button
-                    value='Fortement alcoolisé'
-                    variant='disabled'
-                />
-                <Button
-                    value='Peu alcoolisé'
-                    variant='disabled'
-                />
-                <Button
-                    cocktailId={classic}
-                    value='Classique'
-                />
-                <Button
-                    cocktailId={homemade}
-                    value='Spécialité Oxford'
-                />
-                <Button
-                    value='Sucré'
-                    variant='disabled'
-                />
-                <Button
-                    value='Acidulé'
-                    variant='disabled'
-                />
-                <Button
-                    value='Favoris seulement'
-                    variant='disabled'
-                />
-                <Button
-                    value='A découvrir'
-                    variant='disabled'
-                />
-                <Button
-                    value='La spéciale de ...'
-                    variant='disabled'
-                />
-                <Button
-                    value='La spéciale Développeur'
-                    variant='disabled'
-                />
+                {
+                    randomButtons.map(({text, criterion}) => (
+                        <button
+                            className="btn"
+                            disabled={criterion === undefined}
+                            onClick={async () => {
+                            if (criterion) {
+                                await navigateToRandom(criterion);
+                            }
+                        }}>
+                            {text}
+                        </button>
+                    ))
+                }
 
             </div>
         </main>

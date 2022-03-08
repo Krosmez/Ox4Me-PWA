@@ -11,11 +11,10 @@ export default class OxAPI {
         return await response.json();
     }
 
-    // Waiting to be done
-    // static async getRandomDrink() {
-    //     const response = await fetch(URL + "/drink/random");
-    //     return await response.json();
-    // }
+    static async getRandomDrink(criterion="all") {
+        const response = await fetch(URL + "/drink/random?criterion=" + encodeURIComponent(criterion));
+        return await response.json();
+    }
 
     static async searchDrinks(pattern) {
         const response = await fetch(URL + "/drink/search?pattern=" + encodeURIComponent(pattern));
