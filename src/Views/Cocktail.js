@@ -10,7 +10,7 @@ import StorageTools from "../data/StorageTools";
 export default function Cocktail() {
     const params = useParams();
 
-    const [isConsumed, setIsConsumed] = useState(false);
+    const [isConsumed, setIsConsumed] = useState(StorageTools.containsConsumedDrink(params.id));
     const [isLike, setIsLike] = useState(StorageTools.containsFavoriteDrink(params.id));
     const [drinkName, setDrinkName] = useState("");
     const [drinkCategory, setDrinkCategory] = useState("");
@@ -37,8 +37,8 @@ export default function Cocktail() {
         }
     }
 
-    useEffect( () => {
-        OxAPI.getDrinkDetails(params.id).then(({name, category, ingredients}) => {
+    useEffect(() => {
+        OxAPI.getDrinkDetails(params.id).then(({ name, category, ingredients }) => {
             setDrinkName(name);
             setDrinkCategory(category);
             setIngredients(ingredients);
@@ -66,7 +66,7 @@ export default function Cocktail() {
                         <label htmlFor='already-drink' onClick={setResetConsumed}>
                             <input type='checkbox' name='already-drink' checked={isConsumed} readOnly />
                             &nbsp;
-                            {isConsumed ? "Déjà bû" : "Jamais testé"}
+                            {!isConsumed ? "Jamais testé" : "Déjà bû"}
                         </label>
                         <label htmlFor='like' onClick={addRemoveLike}>
                             <input type='checkbox' name='like' className='heart' checked={isLike} readOnly />

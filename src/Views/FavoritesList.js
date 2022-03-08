@@ -1,32 +1,46 @@
 import React from 'react';
-// import { useEffect, useState } from 'react';
-
-
+import { useState, useEffect } from 'react';
+import StorageTools from '../data/StorageTools';
+import OxAPI from '../data/OxAPI';
+import CocktailItem from '../Components/CocktailItem/CocktailItem';
 
 export default function FavoritesList() {
-    // const [drinks, setDrinks] = useState([]);
+    const [drinks, setDrinks] = useState([]);
 
-    // useEffect( () => {
-    //     console.log('ouhouhouh')
-    // }, []);
+    const favoriteDrink = StorageTools.initCheckFavoritesDrinks();
 
-    return (
-        <main className='container'>
-            <ul className='cocktail-list '>
-                {
-                    // !drinks ? 'Chargement' :
-                    //     drinks.map((el, index) => {
-                    //         return (
-                    //             <ListItem
-                    //                 key={index}
-                    //                 to={`/cocktail/${el.id}`}
-                    //                 name={el.name}
-                    //             />
-
-                    //         )
-                    //     })
+    useEffect(() => {
+        OxAPI.getAllDrinks().then(data => {
+            setDrinks(data.drinks.sort((a, b) => {
+                if (a.category !== b.category) {
+                    return b.category.localeCompare(a.category);
+                } else if (/[a-z]/i.test(a.name) === /[a-z]/i.test(b.name)) {
+                    return a.name.localeCompare(b.name);
+                } else {
+                    return /[a-z]/i.test(a.name) ? -1 : 1;
                 }
-            </ul>
-        </main>
-    )
+            }).filter(e => favoriteDrink.includes(e.id)));
+        });
+    }, [drinks]);
+
+    if (drinks.length < 1) {
+        return <p>Vous n'avez pas de boisson favorite ...</p>;
+    } else {
+        return (
+            <main className='container'>
+                <ul className='cocktail-list '>
+                    {
+                        drinks.map((el) => {
+                            return (
+                                <CocktailItem
+                                    key={el.id}
+                                    data={el}
+                                />
+                            )
+                        })
+                    }
+                </ul>
+            </main>
+        )
+    }
 }
