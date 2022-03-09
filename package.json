@@ -2,6 +2,7 @@
   "name": "ox4me-mig",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ox4me.jonathan-maison.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^11.2.7",
