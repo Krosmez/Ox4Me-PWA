@@ -79,7 +79,7 @@ export default function Cocktail() {
                         </label>
                         <label htmlFor='like' onClick={addRemoveLike} className='btn-heart'>
                             <input type='checkbox' name='like' checked={isLike} readOnly />
-                            {!isLike ? <HeartFill /> : <Heart />}
+                            {!isLike ? <Heart /> : <HeartFill />}
                         </label>
                     </div>
                 </section>
