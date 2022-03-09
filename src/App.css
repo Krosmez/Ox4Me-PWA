@@ -173,6 +173,7 @@ main {
 }
 
 .cocktail-info img {
+  background-color: var(--secondary);
   border-radius: 5px;
 }
 
