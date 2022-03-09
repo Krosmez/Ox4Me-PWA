@@ -37,10 +37,11 @@ export default function RandomCocktail() {
         <main className='container'>
             <div className='btn-random-ctn'>
                 {
-                    randomButtons.map(button => {
+                    randomButtons.map((button, index) => {
                         if (button.hasOwnProperty("action")) {
                             return (
                                 <ButtonLink
+                                    key={index}
                                     onClick={async () => await button.action()}
                                     content={button.text}
                                 />
@@ -48,13 +49,14 @@ export default function RandomCocktail() {
                         } else if (button.hasOwnProperty("criterion")) {
                             return (
                                 <ButtonLink
+                                    key={index}
                                     onClick={async () => await navigateToRandomCriterion(button.criterion)}
                                     content={button.text}
                                 />
                             );
                         } else {
                             return (
-                                <ButtonLink disabled content={button.text} />
+                                <ButtonLink key={index} disabled content={button.text} />
                             )
                         }
                     })
