@@ -10,7 +10,7 @@
 }
 
 .cocktail-list-link {
-    max-width: 65%;
+    flex: 1;
     color: var(--foreground);
     text-decoration: none;
     font-size: 1.2em;
@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 10px;
 }
 
 .icon-container svg {
@@ -33,6 +34,7 @@
 }
 
 .icon-container svg:last-child {
+    margin-right: unset;
     cursor: pointer;
 }
 
@@ -42,11 +44,13 @@
         flex-wrap: wrap;
         gap: 10px;
     }
-
+    
     .cocktail-list-item {
         flex: max(200px, 100%/3 + 0.1%);
+        margin-bottom: unset;
     }
 }
+
 @media (min-width:62em) {
     .cocktail-list-item {
         flex: max(200px, 100%/4 + 0.1%);
