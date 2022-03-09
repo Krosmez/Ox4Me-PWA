@@ -5,8 +5,8 @@ import IngredientListItem from '../Components/IngredientsListItem/IngredientList
 import OxAPI from '../data/OxAPI';
 import StorageTools from "../data/StorageTools";
 import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
-import { ReactComponent as CheckBox } from '../img/check-unboxed-primary.svg'
-import { ReactComponent as Cross } from '../img/crossed-primary.svg'
+import { ReactComponent as CheckBox } from '../img/check-unboxed.svg'
+import { ReactComponent as Cross } from '../img/crossed.svg'
 import { ReactComponent as Heart } from '../img/heart.svg'
 import { ReactComponent as HeartFill } from '../img/heart-fill.svg'
 

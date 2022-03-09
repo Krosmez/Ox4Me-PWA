@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { ReactComponent as CheckBox } from '../../img/check-unboxed.svg';
 import { ReactComponent as Heart } from '../../img/heart.svg';
 import { ReactComponent as HeartFill } from '../../img/heart-fill.svg';

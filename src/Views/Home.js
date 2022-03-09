@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import ButtonLink from '../Components/ButtonLink/ButtonLink';
 
 export default function Home({ screenWidth }) {
