@@ -206,6 +206,24 @@ main {
   border: 1px solid var(--primary);
 }
 
+.cocktail-icons .btn-consumed svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--foreground);
+}
+
+.cocktail-icons .btn-heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cocktail-icons .btn-heart svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--foreground);
+}
+
 label::selection {
   background-color: unset;
   color: unset;

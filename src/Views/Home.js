@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import ButtonLink from '../Components/ButtonLink/ButtonLink';
-import Logo from '../img/oxford-white.png'
 
 export default function Home({ screenWidth }) {
     return (

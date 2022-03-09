@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import IngredientListItem from '../Components/IngredientsListItem/IngredientListItem';
 import OxAPI from '../data/OxAPI';
-import Logo from '../img/oxford-white.png'
 import StorageTools from "../data/StorageTools";
 import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
-
+import { ReactComponent as CheckBox } from '../img/check-unboxed-primary.svg'
+import { ReactComponent as Cross } from '../img/crossed-primary.svg'
+import { ReactComponent as Heart } from '../img/heart.svg'
+import { ReactComponent as HeartFill } from '../img/heart-fill.svg'
 
 export default function Cocktail() {
     const params = useParams();
@@ -74,11 +76,12 @@ export default function Cocktail() {
                     <div className='cocktail-icons'>
                         <label htmlFor='already-drink' onClick={setResetConsumed} className={!isConsumed ? 'btn-consumed ' : 'btn-consumed checked'}>
                             <input type='checkbox' name='already-drink' checked={isConsumed} readOnly />
-                            &nbsp;
-                            {!isConsumed ? "Jamais testé" : "Déjà bû"}
+                            {!isConsumed ? <Cross /> : <CheckBox />}
+                            {!isConsumed ? " Jamais testé" : " Déjà bû"}
                         </label>
-                        <label htmlFor='like' onClick={addRemoveLike}>
-                            <input type='checkbox' name='like' className='heart' checked={isLike} readOnly />
+                        <label htmlFor='like' onClick={addRemoveLike} className='btn-heart'>
+                            <input type='checkbox' name='like' checked={isLike} readOnly />
+                            {!isLike ? <HeartFill /> : <Heart />}
                         </label>
                     </div>
                 </section>
