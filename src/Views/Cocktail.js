@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import IngredientListItem from '../Components/IngredientsListItem/IngredientListItem';
 import OxAPI from '../data/OxAPI';
 import StorageTools from "../data/StorageTools";
+import IngredientListItem from '../Components/IngredientsListItem/IngredientListItem';
 import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
 import { ReactComponent as CheckBox } from '../img/check-unboxed.svg'
 import { ReactComponent as Cross } from '../img/crossed.svg'
@@ -17,7 +17,6 @@ export default function Cocktail() {
     const [isLike, setIsLike] = useState(StorageTools.containsFavoriteDrink(params.id));
     const [drinkName, setDrinkName] = useState("");
     const [drinkCategory, setDrinkCategory] = useState("");
-    // const [drinkImg, setDrinkImg] = useState("");
     const [ingredients, setIngredients] = useState([]);
 
     function addRemoveLike() {
@@ -56,8 +55,7 @@ export default function Cocktail() {
                 <section className='cocktail-top'>
                     <div className='cocktail-info'>
                         <div>
-                            {/* <img src={Logo} alt='Test' /> */}
-                            <img src='https://picsum.photos/600/600' alt='Test' />
+                            <img src={`https://ox4me.herokuapp.com/static/images/drink/${params.id}.svg`} alt={`Image du cocktail ${drinkName}`} />
                         </div>
                         <div>
                             <h2>{drinkName}</h2>
