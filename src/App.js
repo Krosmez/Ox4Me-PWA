@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import ButtonLink from './Components/ButtonLink/ButtonLink';
 import NavBar from './Components/NavBar/NavBar';
 import Cocktail from './Views/Cocktail';
 import CocktailList from './Views/CocktailList';
@@ -15,7 +16,7 @@ function App() {
   useEffect(() => {
     function timeResize() {
       setTimeout(
-          () => setScreenWidth(window.screen.width), 300
+        () => setScreenWidth(window.screen.width), 300
       )
     }
     timeResize();
@@ -30,7 +31,7 @@ function App() {
     <>
       <NavBar isHeader />
       <Routes>
-        <Route path='/' element={<Home screenWidth={screenWidth}/>} />
+        <Route path='/' element={<Home screenWidth={screenWidth} />} />
         <Route path='/cocktail/:id' element={<Cocktail screenWidth={screenWidth} />} />
         <Route path='/random' element={<RandomCocktail />} />
         <Route path='/list' element={<CocktailList />} />

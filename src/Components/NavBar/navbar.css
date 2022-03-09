@@ -34,10 +34,8 @@ footer {
     left: 0;
     padding: unset;
     min-width: 10%;
-    border: 0;
     border-radius: unset;
     border-right: 1px solid var(--background);
-    outline: 0;
     background-color: transparent;
 }
 
@@ -48,7 +46,16 @@ footer {
 }
 
 @media (min-width:48em) {
+    .search {
+        padding: 5px 12%;
+    }
 
+    .search-input-ctn .btn {
+        min-width: 10%;
+    }
+}
+
+@media (min-width:62em) {
     .search {
         padding: 5px 27%;
     }
@@ -66,33 +73,16 @@ nav {
 
 .menu {
     display: flex;
+    min-height: 40px;
     overflow-x: scroll;
-    overflow-y: auto;
     white-space: nowrap;
 }
 
-.menu li {
-    padding: 10px;
-    margin-right: 10px;
-}
-
-.menu li:first-child {
-    padding-left: unset;
-}
-
-.menu li a {
-    color: var(--foreground);
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.menu li a:visited {
-    color: var(--foreground);
-}
-
-.menu li a.active {
-    color: var(--active-primary);
-    border-bottom: 1px solid var(--active-primary);
+@media (min-width:48em) {
+    .menu {
+        justify-content: space-between;
+        overflow-x: unset;
+    }
 }
 
 @media (min-width:62em) {
@@ -104,17 +94,7 @@ nav {
         justify-content: space-between;
     }
 
-    .menu {
-        overflow-x: unset;
-        overflow-y: unset;
-    }
-
     nav {
         margin-top: 0;
-    }
-
-    .menu li:nth-last-child(1) {
-        padding-right: 0px;
-        margin-right: 0px;
     }
 }

@@ -6,6 +6,7 @@ import { ReactComponent as Heart } from '../../img/heart.svg';
 import { ReactComponent as HeartFill } from '../../img/heart-fill.svg';
 import StorageTools from "../../data/StorageTools";
 import './cocktailitem.css';
+import ButtonLink from '../ButtonLink/ButtonLink';
 
 export default function CocktailItem({ data }) {
     const { id, name } = data;
@@ -25,9 +26,7 @@ export default function CocktailItem({ data }) {
 
     return (
         <li className='cocktail-list-item'>
-            <Link to={`/cocktail/${id}`} className='cocktail-link'>
-                {name}
-            </Link>
+            <ButtonLink isLink to={`/cocktail/${id}`} variant='cocktail-list-link' content={name} />
             <div className='icon-container'>
                 {isConsumed && <CheckBox />}
                 {

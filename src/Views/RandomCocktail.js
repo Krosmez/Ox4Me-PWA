@@ -1,19 +1,20 @@
 import React from 'react';
 import OxAPI from '../data/OxAPI';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import ButtonLink from '../Components/ButtonLink/ButtonLink';
 
 export default function RandomCocktail() {
     const randomButtons = [
-        {"text": "Tous cocktails", "criterion": "all"},
-        {"text": "Fortement alcoolisé"},
-        {"text": "Peu alcoolisé"},
-        {"text": "Classique", "criterion": "classic"},
-        {"text": "Spécialité Oxford", "criterion": "homemade"},
-        {"text": "Sucré"},
-        {"text": "Acidulé"},
-        {"text": "Favoris seulement"},
-        {"text": "A découvrir"},
-        {"text": "La spéciale développeur"}
+        { "text": "Tous cocktails", "criterion": "all" },
+        { "text": "Fortement alcoolisé" },
+        { "text": "Peu alcoolisé" },
+        { "text": "Classique", "criterion": "classic" },
+        { "text": "Spécialité Oxford", "criterion": "homemade" },
+        { "text": "Sucré" },
+        { "text": "Acidulé" },
+        { "text": "Favoris seulement" },
+        { "text": "A découvrir" },
+        { "text": "La spéciale développeur" }
     ];
 
     const navigate = useNavigate();
@@ -28,17 +29,16 @@ export default function RandomCocktail() {
             <div className='btn-random-ctn'>
 
                 {
-                    randomButtons.map(({text, criterion}) => (
-                        <button
-                            className="btn"
+                    randomButtons.map(({ text, criterion }) => (
+                        <ButtonLink
                             disabled={criterion === undefined}
                             onClick={async () => {
-                            if (criterion) {
-                                await navigateToRandom(criterion);
-                            }
-                        }}>
-                            {text}
-                        </button>
+                                if (criterion) {
+                                    await navigateToRandom(criterion);
+                                }
+                            }}
+                            content={text}
+                        />
                     ))
                 }
 

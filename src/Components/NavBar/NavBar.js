@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { ReactComponent as Loupe } from '../../img/loupe.svg'
+import ButtonLink from '../ButtonLink/ButtonLink';
 import './navbar.css'
 
 export default function NavBar({ isHeader }) {
@@ -27,27 +27,31 @@ export default function NavBar({ isHeader }) {
                             value={searchValue}
                             onChange={(e) => setSearchValue(e.target.value)}
                         />
-                        <button type='submit' className='btn '
+                        <ButtonLink
+                            type='submit'
                             onClick={handleSearch}
-                        >
-                            <span className='screen-reader-text'>Lancer la recherche</span>
-                            <Loupe />
-                        </button>
+                            content={
+                                <>
+                                    <span className='screen-reader-text'>Lancer la recherche</span>
+                                    <Loupe />
+                                </>
+                            }
+                        />
                     </div>
 
                     <nav>
                         <ul className='menu'>
                             <li>
-                                <NavLink to='/'>Home</NavLink>
+                                <ButtonLink isNavLink content='Accueil' />
                             </li>
                             <li>
-                                <NavLink to='/list'>La liste</NavLink>
+                                <ButtonLink isNavLink to='list' content='La liste' />
                             </li>
                             <li>
-                                <NavLink to='/random'>Cocktail aléatoire</NavLink>
+                                <ButtonLink isNavLink to='random' content='Cocktail aléatoire' />
                             </li>
                             <li>
-                                <NavLink to='/favorites'>Vos favoris</NavLink>
+                                <ButtonLink isNavLink to='favorites' content='Vos favoris' />
                             </li>
                         </ul>
                     </nav>
@@ -61,19 +65,19 @@ export default function NavBar({ isHeader }) {
                     <nav>
                         <ul className='menu'>
                             <li>
-                                <NavLink to='/'>Home</NavLink>
+                                <ButtonLink isNavLink content='Accueil' />
                             </li>
                             <li>
-                                <NavLink to='/list'>La liste</NavLink>
+                                <ButtonLink isNavLink to='list' content='La liste' />
                             </li>
                             <li>
-                                <NavLink to='/random'>Cocktail aléatoire</NavLink>
+                                <ButtonLink isNavLink to='random' content='Cocktail aléatoire' />
                             </li>
                             <li>
-                                <NavLink to='/favorites'>Vos favoris</NavLink>
+                                <ButtonLink isNavLink to='favorites' content='Vos favoris' />
                             </li>
                             <li>
-                                <NavLink to='/mentions-legales'>Mentions Légales</NavLink>
+                                <ButtonLink isNavLink to='mentions-legales' content='Mentions Légales' />
                             </li>
                         </ul>
                     </nav>

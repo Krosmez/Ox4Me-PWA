@@ -7,16 +7,14 @@
   --active-primary: #FFF4E6;
   --light-red: #FF1B1B;
   --pinky-red: #E24A4A;
-  --orange-red: #D14836;
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Roboto Slab", serif;
 }
 
 body {
   color: var(--foreground);
   background-color: var(--background);
-}
-
-body main {
-  font-family: "Roboto", "serif";
+  font-family: var(--primary-font);
   font-weight: 400;
 }
 
@@ -76,20 +74,25 @@ body main {
   flex-direction: column;
 }
 
-.home-list a {
+.home-link {
   margin-bottom: 10px;
   padding: 30px;
-  background-size: 200% 100%;
-  background-image: linear-gradient(to right, var(--secondary), var(--primary));
+  color: var(--background);
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
   text-decoration: none;
   text-align: center;
-  color: var(--foreground);
   font-size: 1.5em;
   font-weight: 600;
 }
 
-.home-list a:visited {
-  color: var(--foreground);
+.home-link:active {
+  color: var(--secondary);
+  background-color: var(--background);
+}
+
+.home-link {
+  color: var(--background);
 }
 
 @media (min-width: 48em) {
@@ -107,22 +110,23 @@ body main {
     gap: 10px;
   }
 
-  .home-list a {
+  .home-link {
     flex: max(350px, 100%/2 - 10px);
     border-radius: 5px;
     transition: ease-in-out all .4s;
   }
 
+  .home-link:hover {
+    color: var(--secondary);
+    background-color: var(--background);
+  }
+
   .hero {
     margin-bottom: 30px;
   }
-
-  .home-list a:hover {
-    background-position: 100% 0;
-  }
 }
 
-/* Button / Links */
+/* RandomCocktail View */
 
 .btn-random-ctn {
   display: flex;
@@ -132,21 +136,8 @@ body main {
   gap: 10px;
 }
 
-.btn {
+.btn-random-ctn .btn {
   flex: max(200px, 100%/4 - 10px);
-  padding: 10px;
-  color: var(--foreground);
-  background-color: var(--primary);
-  border: 0;
-  border-radius: 5px;
-  font-size: 1.2em;
-  text-align: center;
-  text-decoration: none;
-}
-
-.btn.disabled, .btn:disabled {
-  color: var(--background);
-  background-color: var(--gray);
 }
 
 .btn:first-child {
