@@ -60,7 +60,7 @@ export default function NavBar({ isHeader }) {
         )
     } else {
         return (
-            <header>
+            <footer>
                 <div className='container'>
                     <nav>
                         <ul className='menu'>
@@ -82,7 +82,7 @@ export default function NavBar({ isHeader }) {
                         </ul>
                     </nav>
                 </div>
-            </header>
+            </footer>
         )
     }
 

@@ -1,6 +1,15 @@
 header,
 footer {
     padding: 20px 0;
+    background-color: var(--primary);
+}
+
+header {
+    border-radius: 0 0 5px 5px;
+}
+
+footer {
+    border-radius: 5px 5px 0 0;
 }
 
 /* SearchBar */
@@ -21,7 +30,7 @@ footer {
 }
 
 .search::placeholder {
-    color: var(--background);
+    color: var(--primary);
 }
 
 .search-input-ctn .btn {
@@ -35,12 +44,12 @@ footer {
     padding: unset;
     min-width: 10%;
     border-radius: unset;
-    border-right: 1px solid var(--background);
+    border-right: 1px solid var(--primary);
     background-color: transparent;
 }
 
 #loupe {
-    fill: var(--background);
+    fill: var(--primary);
     width: 20px;
     height: 20px;
 }
@@ -78,6 +87,17 @@ nav {
     white-space: nowrap;
 }
 
+footer .menu {
+    display: block;
+    text-align: center;
+    min-height: unset;
+    overflow: unset;
+}
+
+footer .menu li {
+    margin-bottom: 30px;
+}
+
 @media (min-width:48em) {
     .menu {
         justify-content: space-between;
@@ -96,5 +116,19 @@ nav {
 
     nav {
         margin-top: 0;
+    }
+
+    header .menu {
+        align-items: center;
+    }
+
+    footer .menu {
+        display: flex;
+        text-align: left;
+        min-height: initial;
+    }
+
+    footer .menu li {
+        margin-bottom: unset;
     }
 }

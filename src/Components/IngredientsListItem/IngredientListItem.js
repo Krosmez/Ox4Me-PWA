@@ -5,7 +5,7 @@ export default function IngredientListItem({ data, ...props }) {
     return (
 
         !data ? 'Ingredients non fournis' :
-            <li {...props}>
+            <li className='ingredients-list-item' {...props}>
                 <p className='container'>
                     {data.name}
                 </p>

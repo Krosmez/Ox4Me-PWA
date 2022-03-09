@@ -1,78 +1,19 @@
-.cocktail-only {
-    font-family: 'Roboto Slab', 'serif';
-    color: var(--foreground);
-}
-
-.cocktail-only h3 {
-    margin: 20px auto;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: 700;
-}
-
-.cocktail-top-info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.cocktail-top-info img {
-    margin-right: 10px;
-    max-width: 50%;
-    min-height: 15rem;
-    object-fit: contain;
-}
-
-.cocktail-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 45%;
-    color: var(--foreground);
-    font-family: 'Roboto Slab';
-}
-
-.cocktail-details p {
-    font-style: italic;
-}
-
-.ingredients-container li {
-    display: flex;
+.ingredients-list-item {
+    position: relative;
     padding: 10px;
-    font-size: 1.2em;
-    font-weight: 400;
-}
+    text-align: center;
 
-.ingredients-container li:not(:last-child) {
-    border-bottom: 2px solid var(--primary);
 }
-
-.icon-and-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.icon-and-btn label[for=already-drink] {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 11.5rem;
-    padding: 5px;
-    color: var(--foreground);
-    border: 1px solid var(--foreground);
-    border-radius: 5px;
-    font-size: 0.9em;
-}
-
-label[for=already-drink].checked {
-    color: var(--primary);
-    background-color: var(--secondary);
-    border: 1px solid var(--background);
-}
-
-label::selection {
-    background-color: unset;
-    color: unset;
+.ingredients-list-item:not(:last-child):before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    width: 65%;
+    border: 1px solid var(--secondary);
 }
 
 input[type=checkbox] {
@@ -115,32 +56,4 @@ input[type=checkbox].heart:checked {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-}
-
-@media (min-width: 62em) {
-
-    .cocktail-top-info img {
-        margin-right: unset;
-        min-width: 20rem;
-        min-height: 20rem;
-    }
-
-    .cocktail-only h3 {
-        font-size: 2em;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .cocktail-details { 
-        min-width: unset;
-    }
-    .cocktail-details h2 {
-        max-width: 16ch;
-    }
-
-    .ingredients-container li,
-    .cocktail-details {
-        font-size: 1.4em;
-    }
-
 }
