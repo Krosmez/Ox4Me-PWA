@@ -27,7 +27,6 @@ export default function RandomCocktail() {
     return (
         <main className='container'>
             <div className='btn-random-ctn'>
-
                 {
                     randomButtons.map(({ text, criterion }) => (
                         <ButtonLink

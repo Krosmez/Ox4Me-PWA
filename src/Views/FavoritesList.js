@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import StorageTools from '../data/StorageTools';
 import OxAPI from '../data/OxAPI';
 import CocktailItem from '../Components/CocktailItem/CocktailItem';
+import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
 
 export default function FavoritesList() {
     const [drinks, setDrinks] = useState([]);
@@ -24,7 +25,7 @@ export default function FavoritesList() {
     }, [drinks]);
 
     if (drinks.length < 1) {
-        return <p class='container'>Vous n'avez pas de boisson favorite ...</p>;
+        return <LoadingScreen />;
     } else {
         return (
             <main className='container'>

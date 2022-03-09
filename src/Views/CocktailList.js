@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import CocktailItem from "../Components/CocktailItem/CocktailItem"
+import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
 import OxAPI from "../data/OxAPI";
 
 export default function CocktailList() {
@@ -21,7 +22,7 @@ export default function CocktailList() {
     }, []);
 
     if (drinks.length < 1) {
-        return <p className='container'>Chargement...</p>;
+        return <LoadingScreen/>;
     } else {
         return (
             <main className='container'>

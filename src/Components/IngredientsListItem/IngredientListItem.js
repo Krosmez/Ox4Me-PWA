@@ -4,7 +4,7 @@ import './ingredients.css';
 export default function IngredientListItem({ data, ...props }) {
     return (
 
-        !data ? 'Chargement' :
+        !data ? 'Ingredients non fournis' :
             <li {...props}>
                 <p className='container'>
                     {data.name}
