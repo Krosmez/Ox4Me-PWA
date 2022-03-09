@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <NavBar IsElement='header' />
+      <NavBar isHeader />
       <Routes>
         <Route path='/' element={<Home screenWidth={screenWidth}/>} />
         <Route path='/cocktail/:id' element={<Cocktail screenWidth={screenWidth} />} />
@@ -36,7 +36,7 @@ function App() {
         <Route path='/list' element={<CocktailList />} />
         <Route path='/favorites' element={<FavoritesList />} />
       </Routes>
-      <NavBar IsElement='footer' />
+      <NavBar />
     </>
   );
 }
