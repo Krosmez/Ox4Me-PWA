@@ -1,7 +1,7 @@
 :root {
-  --background: #3C2F2F;
+  --background: #191919;
   --foreground: #FFF4E6;
-  --primary: #854442;
+  --primary: #007871;
   --secondary: #BE9B7B;
   --gray: #C1C1C1;
   --active-primary: #FFF4E6;
@@ -82,9 +82,9 @@ main {
 .home-link {
   padding: 30px;
   margin-bottom: 20px;
-  color: var(--background);
-  background-color: var(--secondary);
-  border: 1px solid var(--secondary);
+  color: var(--foreground);
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
   text-decoration: none;
   text-align: center;
   font-size: 1.5em;
@@ -92,22 +92,16 @@ main {
 }
 
 .home-link:active {
-  color: var(--secondary);
+  color: var(--primary);
   background-color: var(--background);
+  border: 1px solid var(--foreground);
 }
 
-.home-link {
-  color: var(--background);
+.home-link:visited {
+  color: var(--foreground);
 }
 
 @media (min-width: 48em) {
-
-  #root {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-  }
 
   .home-list {
     flex-direction: initial;
@@ -122,8 +116,9 @@ main {
   }
 
   .home-link:hover {
-    color: var(--secondary);
+    color: var(--foreground);
     background-color: var(--background);
+    border: 1px solid var(--foreground);
   }
 
   .hero {
@@ -222,7 +217,7 @@ main {
 .cocktail-icons .btn-heart svg {
   width: 30px;
   height: 30px;
-  fill: var(--foreground);
+  fill: var(--pinky-red);
 }
 
 label::selection {

@@ -67,4 +67,8 @@
         color: var(--primary);
         background-color: var(--foreground);
     }
+
+    button[type='submit']:hover {
+        border-radius: 5px 0 0 5px;
+    }
 }

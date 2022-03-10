@@ -31,7 +31,11 @@
     width: 30px;
     height: 30px;
     margin-right: 10px;
-    fill: var(--foreground);
+    fill: var(--background);
+}
+.icon-container .like,
+.icon-container .like-fill {
+    fill: var(--pinky-red);
 }
 
 .icon-container svg:last-child {

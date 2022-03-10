@@ -6,6 +6,7 @@ footer {
 
 header {
     border-radius: 0 0 5px 5px;
+    margin-bottom: 50px;
 }
 
 footer {
@@ -65,6 +66,11 @@ footer {
 }
 
 @media (min-width:62em) {
+    
+    header {
+        margin-bottom: 100px;
+    }
+
     .search {
         padding: 5px 27%;
     }

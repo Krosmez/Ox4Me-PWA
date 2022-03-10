@@ -36,7 +36,10 @@ function App() {
         <Route path='/list' element={<CocktailList />} />
         <Route path='/favorites' element={<FavoritesList />} />
       </Routes>
-      <NavBar />
+      {
+        screenWidth > 996 ? '' :
+          <NavBar />
+      }
     </>
   );
 }
