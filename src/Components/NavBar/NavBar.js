@@ -1,22 +1,27 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { ReactComponent as Loupe } from '../../img/loupe.svg'
 import ButtonLink from '../ButtonLink/ButtonLink';
 import './navbar.css'
 
-export default function NavBar({ isHeader }) {
+export default function NavBar({ isHeader, getSearchValue }) {
+    const navigate = useNavigate();
+
     const [searchValue, setSearchValue] = useState("");
 
     function handleSearch(e) {
         e.preventDefault();
-
-    }
+        getSearchValue(searchValue.trim());
+        navigate(`/search`);
+        setSearchValue('');
+    };
 
     if (isHeader) {
         return (
             <header>
                 <div className='container'>
-                    <div className='search-input-ctn '>
+                    <form className='search-input-ctn' onSubmit={handleSearch}>
                         <label htmlFor='cocktail-search' className='screen-reader-text'>Find a cocktail</label>
                         <input
                             type='search'
@@ -37,7 +42,7 @@ export default function NavBar({ isHeader }) {
                                 </>
                             }
                         />
-                    </div>
+                    </form>
 
                     <nav>
                         <ul className='menu'>

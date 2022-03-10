@@ -225,6 +225,14 @@ label::selection {
   color: unset;
 }
 
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked {
+  display: none;
+}
+
 .cocktail-bottom {
   text-align: center;
   font-size: 1.3em;

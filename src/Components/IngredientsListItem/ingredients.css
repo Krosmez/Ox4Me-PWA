@@ -15,11 +15,3 @@
     width: 65%;
     border: 1px solid var(--secondary);
 }
-
-input[type=checkbox] {
-    display: none;
-}
-
-input[type=checkbox]:checked {
-    display: none;
-}
