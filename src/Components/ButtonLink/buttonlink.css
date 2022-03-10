@@ -1,5 +1,6 @@
 /* Make general style for btn and links */
 
+
 .btn,
 .navlink,
 .link {
@@ -71,4 +72,20 @@
     button[type='submit']:hover {
         border-radius: 5px 0 0 5px;
     }
+}
+
+@media (prefers-color-scheme: light) {
+
+    .navlink,
+    .link,
+    .btn,
+    .navlink:visited,
+    .link:visited,
+    .btn:disabled {
+        color: var(--background);
+    }
+    .btn:active {
+        background-color: var(--background);
+    }
+
 }

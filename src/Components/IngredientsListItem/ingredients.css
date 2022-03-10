@@ -2,7 +2,6 @@
     position: relative;
     padding: 10px;
     text-align: center;
-
 }
 .ingredients-list-item:not(:last-child):before {
     content: '';
