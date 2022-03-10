@@ -13,7 +13,7 @@
 - [ ] Notifications Push
 - [ ] Gerer les metadata / favicon
 - [ ] Faire le systeme de recherche
-  - [x] Construire le bouton
+  - [x] ~~Construire le bouton~~
   - [ ] Construire la vue de rendu de resultat
 - [ ] Rajouter un bouton de retour pour certaines vue
 - [ ] Rajouter un back to top
