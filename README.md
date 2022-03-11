@@ -12,7 +12,7 @@
 - [ ] Page 404
 - [ ] Notifications Push
 - [ ] Gerer les metadata / favicon
-- [ ] [IMPROVE]Faire le systeme de recherche
+- [ ] [**IMPROVE**] Faire le systeme de recherche
   - [x] ~~Construire le bouton~~
   - [x] ~~Construire la vue de rendu de resultat~~
 - [ ] Rajouter un bouton de retour pour certaines vue
@@ -20,7 +20,7 @@
 - [ ] Se renseigner sur les features PWA (ex => Shortcut)
 - [ ] Gerer le comportement de la PWA sur les differents browser
 - [ ] Trouver une nouvelle palette de couleur
-- [ ] [IMPROVE]Faire un light / dark mode
-  - [x] Construire le composant
-  - [x] Integrer le composant au header
-- [x] Gerer le Theme des StatusBar / NavigationBar pour l'app mobile
+- [ ] [**IMPROVE**] Faire un light / dark mode
+  - [x] ~~Construire le composant~~
+  - [x] ~~Integrer le composant au header~~
+- [x] ~~Gerer le Theme des StatusBar / NavigationBar pour l'app mobile~~

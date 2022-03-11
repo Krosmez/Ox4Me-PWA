@@ -1,8 +1,8 @@
 :root {
-  /* --background: #191919;
+  --background: #191919;
   --foreground: #FFF4E6;
-  --primary: #007871;
-  --secondary: #BE9B7B; */
+  --primary: #BE995B;
+  --secondary: #BE9B7B;
   --gray: #C1C1C1;
   --active-primary: #FFF4E6;
   --light-red: #FF1B1B;
@@ -15,7 +15,7 @@
   :root {
     --background: #191919;
     --foreground: #FFF4E6;
-    --primary: #007871;
+    --primary: #BE995B;
     --secondary: #BE9B7B;
   }
 }
