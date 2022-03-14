@@ -10,31 +10,25 @@ for (let [endpoint, {data, timestamp}] of Object.entries(StorageTools.initCheckA
     }
 }
 
+async function cacheEndpoint(endpoint) {
+    if (!cache.hasOwnProperty(endpoint)) {
+        cache[endpoint] = new Cache();
+    }
+    const data = await cache[endpoint].queryData(async () => {
+        const response = await fetch(URL + endpoint);
+        return await response.json();
+    });
+    StorageTools.setApiCache(endpoint, cache[endpoint]);
+    return data;
+}
+
 export default class OxAPI {
     static async getAllDrinks() {
-        const endpoint = "/drink/all";
-        if (!cache.hasOwnProperty(endpoint)) {
-            cache[endpoint] = new Cache();
-        }
-        const data = await cache[endpoint].queryData(async () => {
-            const response = await fetch(URL + endpoint);
-            return await response.json();
-        });
-        StorageTools.setApiCache(endpoint, cache[endpoint]);
-        return data;
+        return cacheEndpoint("/drink/all");
     }
 
     static async getDrinkDetails(drinkID) {
-        const endpoint = "/drink/get/" + encodeURIComponent(drinkID);
-        if (!cache.hasOwnProperty(endpoint)) {
-            cache[endpoint] = new Cache();
-        }
-        const data = await cache[endpoint].queryData(async () => {
-            const response = await fetch(URL + endpoint);
-            return await response.json();
-        });
-        StorageTools.setApiCache(endpoint, cache[endpoint]);
-        return data;
+        return cacheEndpoint("/drink/get/" + encodeURIComponent(drinkID));
     }
 
     static async getRandomDrink(criterion="all") {
@@ -43,15 +37,10 @@ export default class OxAPI {
     }
 
     static async searchDrinks(pattern) {
-        const endpoint = "/drink/search?pattern=" + encodeURIComponent(pattern);
-        if (!cache.hasOwnProperty(endpoint)) {
-            cache[endpoint] = new Cache();
-        }
-        const data = await cache[endpoint].queryData(async () => {
-            const response = await fetch(URL + endpoint);
-            return await response.json();
-        });
-        StorageTools.setApiCache(endpoint, cache[endpoint]);
-        return data;
+        return cacheEndpoint("/drink/search?pattern=" + encodeURIComponent(pattern));
+    }
+
+    static async drinkOfTheDay() {
+        return cacheEndpoint("/drink/today");
     }
 }
