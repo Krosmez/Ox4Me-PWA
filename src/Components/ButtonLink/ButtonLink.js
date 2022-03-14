@@ -25,6 +25,7 @@ export default function ButtonLink(
                         `${variant}` :
                         'link'
                 }
+                {...props}
             >
                 {content}
             </Link >
