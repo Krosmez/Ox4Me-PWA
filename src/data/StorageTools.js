@@ -1,5 +1,6 @@
 const FAVORITES_DRINKS_STORAGE = "favDrinks";
 const CONSUMED_DRINKS_STORAGE = "consumedDrinks";
+const API_CACHE_STORAGE = "apiCache";
 
 export default class StorageTools {
     static initCheckFavoritesDrinks() {
@@ -66,5 +67,31 @@ export default class StorageTools {
 
     static containsConsumedDrink(drinkID) {
         return StorageTools.initCheckConsumedDrinks().includes(drinkID);
+    }
+
+    static initCheckApiCache() {
+        let cache;
+        try {
+            cache = JSON.parse(localStorage.getItem(API_CACHE_STORAGE));
+            if (typeof cache !== "object") {
+                throw new TypeError();
+            }
+        } catch {
+            cache = {};
+            localStorage.setItem(API_CACHE_STORAGE, JSON.stringify(cache));
+        }
+        return cache;
+    }
+
+    static setApiCache(endpoint, endpointCache) {
+        if (!StorageTools.containsApiCache(endpoint)) {
+            const cache = StorageTools.initCheckApiCache();
+            cache[endpoint] = endpointCache.json();
+            localStorage.setItem(API_CACHE_STORAGE, JSON.stringify(cache));
+        }
+    }
+
+    static containsApiCache(endpoint) {
+        return StorageTools.initCheckApiCache().hasOwnProperty(endpoint);
     }
 }
