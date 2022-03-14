@@ -9,6 +9,7 @@ export default function NavBar({ isHeader, getSearchValue }) {
     const navigate = useNavigate();
 
     const [searchValue, setSearchValue] = useState("");
+    const [isToggle, setIsToggle] = useState(false);
 
     function handleSearch(e) {
         e.preventDefault();
@@ -43,20 +44,27 @@ export default function NavBar({ isHeader, getSearchValue }) {
                             }
                         />
                     </form>
-
                     <nav>
-                        <ul className='menu'>
+                        <button
+                            className="toggle-menu"
+                            aria-expanded={isToggle === true ? "true" : "false"}
+                            aria-controls="menu"
+                            onClick={() => { setIsToggle(!isToggle) }}
+                        >
+                            <span className="screen-reader-text">Menu</span>
+                        </button>
+                        <ul className="menu" id="menu" hidden={!isToggle ? true : false}>
                             <li>
-                                <ButtonLink isNavLink content='Accueil' />
+                                <ButtonLink isNavLink content='Accueil' onClick={() => { setIsToggle(!isToggle) }} />
                             </li>
                             <li>
-                                <ButtonLink isNavLink to='list' content='La liste' />
+                                <ButtonLink isNavLink to='list' content='La liste' onClick={() => { setIsToggle(!isToggle) }} />
                             </li>
                             <li>
-                                <ButtonLink isNavLink to='random' content='Cocktail aléatoire' />
+                                <ButtonLink isNavLink to='random' content='Cocktail aléatoire' onClick={() => { setIsToggle(!isToggle) }} />
                             </li>
                             <li>
-                                <ButtonLink isNavLink to='favorites' content='Vos favoris' />
+                                <ButtonLink isNavLink to='favorites' content='Vos favoris' onClick={() => { setIsToggle(!isToggle) }} />
                             </li>
                         </ul>
                     </nav>

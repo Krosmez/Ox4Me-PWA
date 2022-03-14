@@ -25,6 +25,7 @@ export default function ButtonLink(
                         `${variant}` :
                         'link'
                 }
+                {...props}
             >
                 {content}
             </Link >
@@ -33,7 +34,11 @@ export default function ButtonLink(
         // Display a default <a> anchor but with 
         // a default 'active' behavior.  
         return (
-            <NavLink to={to} className={`${variant ? `${variant}` : 'navlink'}`}>
+            <NavLink
+                to={to}
+                className={`${variant ? `${variant}` : 'navlink'}`}
+                {...props}
+            >
                 {content}
             </NavLink>
         )

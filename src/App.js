@@ -43,10 +43,10 @@ function App() {
         <Route path='/favorites' element={<FavoritesList />} />
         <Route path='/search' element={<SearchResult pattern={pattern} />} />
       </Routes>
-      {
+      {/* {
         screenWidth > 996 ? '' :
           <NavBar />
-      }
+      } */}
     </>
   );
 }

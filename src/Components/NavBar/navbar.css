@@ -1,16 +1,14 @@
 header,
 footer {
-    padding: 20px 0;
     background-color: var(--primary);
 }
 
 header {
+    position: sticky;
+    top: 0;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--background);
     border-radius: 0 0 5px 5px;
-    margin-bottom: 50px;
-}
-
-footer {
-    border-radius: 5px 5px 0 0;
 }
 
 /* SearchBar */
@@ -20,7 +18,7 @@ footer {
 }
 
 .search {
-    padding: 5px 12%;
+    padding: 5px 10px 5px 20%;
     min-width: 100%;
     border-radius: 5px;
     border: 0;
@@ -42,10 +40,10 @@ footer {
     top: 0;
     bottom: 0;
     left: 0;
-    padding: unset;
-    min-width: 10%;
+    padding: 0 0 0 10px;
+    /* min-width: 10%; */
     border-radius: unset;
-    border-right: 1px solid var(--primary);
+    /* border-right: 1px solid var(--primary); */
     background-color: transparent;
 }
 
@@ -90,27 +88,82 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* navigation */
-
-nav {
-    margin-top: 10px;
+header .container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu {
     display: flex;
-    min-height: 40px;
-    overflow-x: scroll;
-    white-space: nowrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 10000;
+    pointer-events: none;
+    background-color: var(--primary);
+    transform: translateX(100%);
+    transition: .3s;
 }
 
-footer .menu {
-    display: block;
-    text-align: center;
-    min-height: unset;
-    overflow: unset;
-}
-
-footer .menu li {
+.menu li:not(:last-child) {
     margin-bottom: 30px;
+}
+
+.toggle-menu {
+    position: relative;
+    z-index: 10001;
+    padding: 1rem 0;
+    top: 0;
+    left: 0;
+    border: 0;
+    width: 3rem;
+    height: 2.3rem;
+    background-color: var(--background);
+    background-clip: content-box;
+}
+
+.toggle-menu::before, .toggle-menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0.3rem;
+    background-color: var(--background);
+    transition: .3s;
+    transform-origin: left center;
+}
+
+.toggle-menu::before {
+    top: 0;
+}
+
+.toggle-menu::after {
+    bottom: 0;
+}
+
+.toggle-menu[aria-expanded="true"] {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.toggle-menu[aria-expanded="true"]::before {
+    transform: rotate(42.5deg);
+}
+
+.toggle-menu[aria-expanded="true"]::after {
+    transform: rotate(-42.5deg);
+}
+
+.menu:not([hidden]) {
+    opacity: 1;
+    transform: translateX(0%);
+    pointer-events: all;
 }
 
 @media (min-width:48em) {

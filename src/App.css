@@ -23,6 +23,10 @@ main {
   margin-bottom: 50px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .container {
   max-width: 32.5rem;
   margin-right: auto;
