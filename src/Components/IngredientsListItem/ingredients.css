@@ -2,6 +2,7 @@
     position: relative;
     padding: 10px;
     text-align: center;
+    z-index: -1;
 }
 .ingredients-list-item:not(:last-child):before {
     content: '';
