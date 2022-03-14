@@ -19,6 +19,11 @@
 - [ ] Rajouter un back to top
 - [ ] Se renseigner sur les features PWA (ex => Shortcut)
 - [ ] Gerer le comportement de la PWA sur les differents browser
+
+### Color Theme
+
+Retrait du light theme pour le moment.
+
 - [ ] Trouver une nouvelle palette de couleur
 - [ ] [**IMPROVE**] Faire un light / dark mode
   - [x] ~~Construire le composant~~

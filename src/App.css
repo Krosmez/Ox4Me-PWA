@@ -11,24 +11,6 @@
   --secondary-font: "Roboto Slab", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #191919;
-    --foreground: #FFF4E6;
-    --primary: #BE995B;
-    --secondary: #BE9B7B;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #FFF4E6;
-    --foreground: #191919;
-    --primary: #007871;
-    --secondary: #BE9B7B;
-  }
-}
-
 body {
   color: var(--foreground);
   background-color: var(--background);
@@ -292,19 +274,5 @@ input[type=checkbox]:checked {
   .cocktail-icons .btn-consumed {
     border: 1px solid var(--foreground);
     border-radius: 5px 0 0 0;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-
-  .home-link,
-  .home-link:visited {
-    color: var(--background);
-  }
-
-  .home-link:active {
-    color: var(--primary);
-    background-color: var(--background);
-    border: 1px solid var(--primary);
   }
 }

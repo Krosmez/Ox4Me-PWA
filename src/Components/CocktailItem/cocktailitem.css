@@ -62,13 +62,3 @@
         flex: max(200px, 100%/4 + 0.1%);
     }
 }
-
-@media (prefers-color-scheme: light) {
-    .cocktail-list-link {
-        color: var(--background);
-    }
-
-    .cocktail-list-link:visited {
-        color: var(--background);
-    }
-}
