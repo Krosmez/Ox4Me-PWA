@@ -73,7 +73,7 @@ export default class StorageTools {
         let cache;
         try {
             cache = JSON.parse(localStorage.getItem(API_CACHE_STORAGE));
-            if (typeof cache !== "object") {
+            if (Object.getPrototypeOf(cache) === Object.prototype) {
                 throw new TypeError();
             }
         } catch {
