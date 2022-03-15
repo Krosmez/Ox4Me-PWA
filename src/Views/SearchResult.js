@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import CocktailItem from '../Components/CocktailItem/CocktailItem';
+import Headings from '../Components/Headings/Headings';
 import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
 import OxAPI from '../data/OxAPI';
 
@@ -18,6 +19,7 @@ export default function SearchResult({ pattern }) {
     } else {
         return (
             <main className='container'>
+                <Headings Is='h2' text='Résultat de recherche'/>
                 <ul className='cocktail-list '>
                     {
                         drinks.map((el, index) => {

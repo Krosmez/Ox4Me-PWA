@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import ButtonLink from '../Components/ButtonLink/ButtonLink';
+import Headings from '../Components/Headings/Headings';
 import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
 import OxAPI from "../data/OxAPI";
 
@@ -22,24 +23,53 @@ export default function Home({ screenWidth }) {
     }, []);
 
     return (
-        <main>
-            <div className='hero'>
-                <h1>Ox4Me</h1>
-            </div>
+        <main className='home'>
             {
                 isLoading ? <LoadingScreen /> :
-                    <section className={`home-list ${screenWidth >= 768 ? "container" : ''}`}>
-                        <ButtonLink
-                            variant="home-link btn"
-                            disabled={drinkOfTheDay === false}
-                            isLink={drinkOfTheDay !== false}
-                            to={drinkOfTheDay.hasOwnProperty("id") ? `/cocktail/${drinkOfTheDay.id}` : ""}
-                            content={drinkOfTheDay.hasOwnProperty("name") ? `Cocktail du jour : ${drinkOfTheDay.name}` : "Chargement du cocktail du jour..."}
-                        />
-                        <ButtonLink isLink variant='home-link' to='list' content='La liste' />
-                        <ButtonLink isLink variant='home-link' to='random' content='Cocktail aléatoire' />
-                        <ButtonLink isLink variant='home-link' to='favorites' content='Vos favoris' />
-                    </section>
+                    <>
+                        <section className='hero container'>
+                            <Headings Is='h1' text='Ox4Me' />
+                        </section>
+
+                        <section className='daily'>
+                            <Headings Is='h2' variant='container' text='Le Cocktail du Jour' />
+                            <div className='daily-content container'>
+
+                                <div className='daily-info container'>
+                                    <div>
+                                        <Headings Is='h3' text={drinkOfTheDay.name} />
+                                        <p>
+                                            {
+                                                drinkOfTheDay.category === 'classic' ?
+                                                    "Classique" :
+                                                    drinkOfTheDay.category === 'homemade' ?
+                                                        "Spécialité Oxford" :
+                                                        "Inconnu"
+                                            }
+                                        </p>
+                                    </div>
+                                    <ButtonLink
+                                        isLink
+                                        variant='link-btn'
+                                        to={drinkOfTheDay.hasOwnProperty("id") ? `/cocktail/${drinkOfTheDay.id}` : ""}
+                                        content='Voir le cocktail'
+                                    />
+                                </div>
+                                <div className='cocktail-img'>
+                                    <img src={`https://ox4me.herokuapp.com/static/images/drink/${drinkOfTheDay.id}.svg`} alt={`Illustration du cocktail ${drinkOfTheDay.name}`} loading='lazy' />
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <Headings Is='h2' variant='container' text="Explorer l'application" />
+
+                        <section className={`home-list ${screenWidth >= 768 ? "container" : ''}`}>
+                            <ButtonLink isLink variant='home-link' to='list' content='La liste' />
+                            <ButtonLink isLink variant='home-link' to='favorites' content='Vos favoris' />
+                            <ButtonLink isLink variant='home-link' to='random' content='Cocktail aléatoire' />
+                        </section>
+                    </>
             }
         </main>
     )

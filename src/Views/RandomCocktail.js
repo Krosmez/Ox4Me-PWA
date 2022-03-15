@@ -3,6 +3,7 @@ import OxAPI from '../data/OxAPI';
 import {useNavigate} from "react-router-dom";
 import ButtonLink from '../Components/ButtonLink/ButtonLink';
 import StorageTools from "../data/StorageTools";
+import Headings from '../Components/Headings/Headings';
 
 export default function RandomCocktail() {
     const randomButtons = [
@@ -35,6 +36,7 @@ export default function RandomCocktail() {
 
     return (
         <main className='container'>
+            <Headings Is='h2' text='Cocktail Aléatoire'/>
             <div className='btn-random-ctn'>
                 {
                     randomButtons.map((button, index) => {

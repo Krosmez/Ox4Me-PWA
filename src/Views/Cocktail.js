@@ -6,6 +6,7 @@ import StorageTools from '../data/StorageTools';
 import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
 import IconBar from '../Components/IconBar/IconBar';
 import IngredientListItem from '../Components/IngredientsListItem/IngredientListItem';
+import Headings from '../Components/Headings/Headings';
 
 export default function Cocktail() {
     const params = useParams();
@@ -55,7 +56,7 @@ export default function Cocktail() {
                     <div className='cocktail-info'>
 
                         <div>
-                            <h2>{drinkName}</h2>
+                            <Headings Is='h2' text={drinkName}/>
                             <p>
                                 {
                                     drinkCategory === 'classic' ?
@@ -77,13 +78,13 @@ export default function Cocktail() {
                     </div>
 
                     <div className='cocktail-img'>
-                        <img src={`https://ox4me.herokuapp.com/static/images/drink/${params.id}.svg`} alt={`Image du cocktail ${drinkName}`} loading='lazy' />
+                        <img src={`https://ox4me.herokuapp.com/static/images/drink/${params.id}.svg`} alt={`Illustration du cocktail ${drinkName}`} loading='lazy' />
                     </div>
 
                 </section>
 
                 <section className='cocktail-bottom'>
-                    <h3>Les ingredients</h3>
+                    <Headings Is='h3' text='Les ingrédients' />
                     <ul className='ingredients-list'>
                         {
                             ingredients.map((el, index) => {

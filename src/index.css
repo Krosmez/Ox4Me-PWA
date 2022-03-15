@@ -4,6 +4,7 @@ html {
   font-size: calc(1em * .625);
   /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Box sizing rules */

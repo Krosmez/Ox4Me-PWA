@@ -8,23 +8,18 @@ export default function ButtonLink(
         isNavLink,
         to = '/',
         variant,
-        variantAsDefault,
+        asDefaultStyle,
         content = 'Lorem',
         type = 'button',
         Children,
         ...props
     }
-) {
+) { console.log(asDefaultStyle);
     if (isLink) {
         // Display a default <a> anchor
         return (
             <Link to={to}
-                className={variantAsDefault ?
-                    `link ${variantAsDefault}` :
-                    variant ?
-                        `${variant}` :
-                        'link'
-                }
+                className={`${(asDefaultStyle && 'link') || ''} ${(variant && variant) || ''}`}
                 {...props}
             >
                 {content}

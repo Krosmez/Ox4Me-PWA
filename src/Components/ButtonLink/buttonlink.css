@@ -1,12 +1,12 @@
 /* Make general style for btn and links */
 
-
 .btn,
 .navlink,
 .link {
     transition: .3s ease-in-out all;
 }
 
+.link-btn,
 .navlink,
 .link {
     padding: 10px;
@@ -16,6 +16,14 @@
     font-weight: 600;
 }
 
+.link-btn {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: var(--primary);
+    transition: .3s;
+}
+
+.link-btn:visited,
 .navlink:visited,
 .link:visited {
     color: var(--foreground);

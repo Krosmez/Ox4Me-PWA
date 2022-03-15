@@ -4,6 +4,7 @@ import StorageTools from '../data/StorageTools';
 import OxAPI from '../data/OxAPI';
 import CocktailItem from '../Components/CocktailItem/CocktailItem';
 import LoadingScreen from '../Components/LoadingScreen/LoadingScreen';
+import Headings from '../Components/Headings/Headings';
 
 export default function FavoritesList() {
     const [drinks, setDrinks] = useState([]);
@@ -29,6 +30,7 @@ export default function FavoritesList() {
     } else {
         return (
             <main className='container'>
+                <Headings Is='h2' text='Vos favoris'/>
                 <ul className='cocktail-list '>
                     {
                         drinks.map((el) => {
