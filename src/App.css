@@ -116,131 +116,82 @@ main {
 
 .cocktail-details {
   font-family: var(--secondary-font);
-  font-size: 1.2em;
   font-weight: 400;
 }
 
+.cocktail-info div:first-child,
 .cocktail-top {
-  margin-bottom: 20px;
-}
-
-.cocktail-info {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .cocktail-info h2 {
+  font-size: 2em;
   line-height: 1;
+  margin-bottom: 10px;
 }
 
-.cocktail-info img {
-  background-color: var(--secondary);
-  border-radius: 5px;
-}
-
-.cocktail-info div:last-child {
-  min-width: 50%;
-}
-
-.cocktail-info div:last-child p {
+.cocktail-info div:first-child p {
   font-style: italic;
   font-size: .9em;
 }
 
-.cocktail-icons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cocktail-icons .btn-consumed {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 16rem;
-  padding: 5px 10px;
-  color: var(--foreground);
-  border: 1px solid var(--foreground);
+.cocktail-img {
+  width: 100%;
+  height: 23rem;
+  background-color: var(--secondary);
   border-radius: 5px;
 }
 
-.cocktail-icons .btn-consumed.checked {
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
+.cocktail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
 }
 
-.cocktail-icons .btn-consumed svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--foreground);
-}
-
-.cocktail-icons .btn-heart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cocktail-icons .btn-heart svg {
-  width: 30px;
-  height: 30px;
-  fill: var(--pinky-red);
-}
-
-label::selection {
-  background-color: unset;
-  color: unset;
-}
-
-input[type=checkbox] {
-  display: none;
-}
-
-input[type=checkbox]:checked {
-  display: none;
-}
-
-.cocktail-bottom {
+.cocktail-bottom h3 {
+  font-size: 2em;
   text-align: center;
-  font-size: 1.3em;
+  margin-bottom: 30px;
 }
 
-.cocktail-bottom p {
-  font-size: 1.8rem;
+.cocktail-bottom *:not(h3) {
+  font-family: var(--primary-font);
 }
 
-@media (min-width:48em) {
-  .cocktail-icons {
-    max-width: 47%;
-  }
-
-  .cocktail-bottom p {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 62em) {
+@media (min-width:67.5em) {
   .cocktail-details {
-    max-width: 65%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
   }
 
   .cocktail-top {
-    display: flex;
-    flex-direction: column-reverse;
-    position: relative;
     margin-bottom: unset;
   }
 
-  .cocktail-icons {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  .cocktail-top h2,
+  .cocktail-bottom h3 {
+    font-size: 3em;
   }
 
-  .cocktail-icons .btn-consumed {
-    border: 1px solid var(--foreground);
-    border-radius: 5px 0 0 0;
+  .cocktail-info div:first-child p {
+    font-size: 1.5em;
+  }
+
+  .cocktail-top {
+    min-width: 40%;
+  }
+
+  .cocktail-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 50%;
+    border-left: 2px solid var(--secondary);
+  }
+
+  .cocktail-bottom *:not(h3) {
+    font-size: 1.1em;
   }
 }
