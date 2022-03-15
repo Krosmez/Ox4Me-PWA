@@ -8,16 +8,14 @@
 
 ### Features
 
-- [ ] Finir les boutons aleatoires
+- [ ] Rajouter un bouton de retour pour certaines vue
+- [ ] Rajouter un bouton de reload random sur la view cocktail
+- [ ] Rajouter un back to top
 - [ ] Page 404
 - [ ] Notifications Push
-- [ ] Gerer les metadata / favicon
-- [ ] [**IMPROVE**] Faire le systeme de recherche
-  - [x] ~~Construire le bouton~~
-  - [x] ~~Construire la vue de rendu de resultat~~
-- [ ] Rajouter un bouton de retour pour certaines vue
-- [ ] Rajouter un back to top
 - [ ] Se renseigner sur les features PWA (ex => Shortcut)
+- [ ] Finir les boutons aleatoires
+- [ ] Gerer les metadata / favicon
 - [ ] Gerer le comportement de la PWA sur les differents browser
 
 ### Color Theme
@@ -29,3 +27,9 @@ Retrait du light theme pour le moment.
   - [x] ~~Construire le composant~~
   - [x] ~~Integrer le composant au header~~
 - [x] ~~Gerer le Theme des StatusBar / NavigationBar pour l'app mobile~~
+
+## Done
+
+- [x] ~~Faire le systeme de recherche~~
+  - [x] ~~Construire le bouton~~
+  - [x] ~~Construire la vue de rendu de resultat~~
