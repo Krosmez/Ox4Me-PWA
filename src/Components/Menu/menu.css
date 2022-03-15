@@ -1,0 +1,99 @@
+/* navigation */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 10000;
+    pointer-events: none;
+    background-color: var(--primary);
+    transform: translateX(100%);
+    transition: .3s;
+}
+
+.menu li:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.toggle-menu {
+    position: relative;
+    z-index: 10001;
+    padding: 1rem 0;
+    top: 0;
+    left: 0;
+    border: 0;
+    width: 3rem;
+    height: 2.4rem;
+    background-color: var(--background);
+    background-clip: content-box;
+}
+
+.toggle-menu::before, .toggle-menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0.4rem;
+    background-color: var(--background);
+    transition: .3s;
+    transform-origin: left center;
+}
+
+.toggle-menu::before {
+    top: 0;
+}
+
+.toggle-menu::after {
+    bottom: 0;
+}
+
+.toggle-menu[aria-expanded="true"] {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.toggle-menu[aria-expanded="true"]::before {
+    transform: rotate(42.5deg);
+}
+
+.toggle-menu[aria-expanded="true"]::after {
+    transform: rotate(-42.5deg);
+}
+
+.menu:not([hidden]) {
+    opacity: 1;
+    transform: translateX(0%);
+    pointer-events: all;
+}
+
+@media (min-width:48em) {
+    .menu {
+        left: unset;
+        min-width: 50%;
+    }
+}
+
+@media (min-width:67.5em) {
+    /* 1080px */
+
+    .toggle-menu {
+        display: none;
+    }
+
+    header .menu {
+        flex-direction: row;
+        justify-content: center;
+        position: initial;
+    }
+
+    .menu li:not(:last-child) {
+        margin-bottom: unset;
+    }
+}

@@ -1,14 +1,23 @@
-header,
-footer {
-    background-color: var(--primary);
-}
-
 header {
     position: sticky;
     top: 0;
     padding: 20px 0;
+    background-color: var(--primary);
     border-bottom: 1px solid var(--background);
     border-radius: 0 0 5px 5px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width:67.5em) {
+    /* 1080px */
+
+    header .container {
+        align-items: center;
+    }
 }
 
 /* SearchBar */
@@ -17,22 +26,7 @@ header {
     position: relative;
 }
 
-.search {
-    padding: 5px 10px 5px 20%;
-    min-width: 100%;
-    border-radius: 5px;
-    border: 0;
-}
-
-.search:focus {
-    outline: 0;
-}
-
-.search::placeholder {
-    color: var(--primary);
-}
-
-.search-input-ctn .btn {
+.search-label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,17 +34,32 @@ header {
     top: 0;
     bottom: 0;
     left: 0;
-    padding: 0 0 0 10px;
-    /* min-width: 10%; */
-    border-radius: unset;
-    /* border-right: 1px solid var(--primary); */
+    padding: 0 5px 0 10px;
+    border-radius: 50px 0 0 50px;
     background-color: transparent;
 }
 
-#loupe {
+.search-label svg {
     fill: var(--primary);
     width: 20px;
     height: 20px;
+}
+
+.search-btn {
+    padding: 5px 10px 5px 20%;
+    border-radius: 50px;
+    border: 0;
+    outline: 1px solid transparent;
+    transition: ease-in-out all .3s;
+}
+
+.search-btn::placeholder {
+    color: var(--primary);
+}
+
+.search-btn:focus {
+    border-radius: 5px;
+    outline: 2px solid var(--background);
 }
 
 /* Disable default cross apparition for input search */
@@ -62,141 +71,17 @@ input[type="search"]::-webkit-search-results-decoration {
     display: none;
 }
 
-@media (min-width:48em) {
-    .search {
-        padding: 5px 12%;
-    }
-
-    .search-input-ctn .btn {
-        min-width: 10%;
-    }
-}
-
 @media (min-width:62em) {
 
     header {
         margin-bottom: 100px;
     }
 
-    .search {
+    .search-btn {
         padding: 5px 27%;
     }
 
-    .search-input-ctn .btn {
+    .search-input-ctn .search-label {
         min-width: 25%;
-    }
-}
-
-/* navigation */
-header .container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 10000;
-    pointer-events: none;
-    background-color: var(--primary);
-    transform: translateX(100%);
-    transition: .3s;
-}
-
-.menu li:not(:last-child) {
-    margin-bottom: 30px;
-}
-
-.toggle-menu {
-    position: relative;
-    z-index: 10001;
-    padding: 1rem 0;
-    top: 0;
-    left: 0;
-    border: 0;
-    width: 3rem;
-    height: 2.3rem;
-    background-color: var(--background);
-    background-clip: content-box;
-}
-
-.toggle-menu::before, .toggle-menu::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 0.3rem;
-    background-color: var(--background);
-    transition: .3s;
-    transform-origin: left center;
-}
-
-.toggle-menu::before {
-    top: 0;
-}
-
-.toggle-menu::after {
-    bottom: 0;
-}
-
-.toggle-menu[aria-expanded="true"] {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.toggle-menu[aria-expanded="true"]::before {
-    transform: rotate(42.5deg);
-}
-
-.toggle-menu[aria-expanded="true"]::after {
-    transform: rotate(-42.5deg);
-}
-
-.menu:not([hidden]) {
-    opacity: 1;
-    transform: translateX(0%);
-    pointer-events: all;
-}
-
-@media (min-width:48em) {
-    .menu {
-        justify-content: space-between;
-        overflow-x: unset;
-    }
-}
-
-@media (min-width:62em) {
-
-    header .container,
-    footer .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    nav {
-        margin-top: 0;
-    }
-
-    header .menu {
-        align-items: center;
-    }
-
-    footer .menu {
-        display: flex;
-        text-align: left;
-        min-height: initial;
-    }
-
-    footer .menu li {
-        margin-bottom: unset;
     }
 }

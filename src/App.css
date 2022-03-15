@@ -28,48 +28,12 @@ main {
 }
 
 .container {
-  max-width: 32.5rem;
+  /* max-width: 32.5rem; */
+  max-width: 90%;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (min-width: 36em) {
-
-  /* 36em * 16 = 576px */
-  .container {
-    max-width: 50rem;
-  }
-}
-
-@media (min-width: 48em) {
-
-  /* 48em * 16 = 768px */
-  .container {
-    max-width: 70rem;
-  }
-}
-
-@media (min-width: 62em) {
-
-  /* 62em * 16 = 992px */
-  .container {
-    max-width: 90rem;
-  }
-}
-
-@media (min-width: 75em) {
-
-  /* 75em * 16 = 1200px */
-  .container {
-    max-width: 100rem;
-  }
-}
-
-@media (min-width: 105em) {
-  .container {
-    max-width: 128rem;
-  }
-}
 
 /* Home View */
 

@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const [pattern, setPattern] = useState("");
-  const [screenWidth, setScreenWidth] = useState(Infinity);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   function getSearchValue(pattern) {
     setPattern(pattern);
@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <NavBar isHeader getSearchValue={getSearchValue} />
+      <NavBar getSearchValue={getSearchValue} screenWidth={screenWidth} />
       <Routes>
         <Route path='/' element={<Home screenWidth={screenWidth} />} />
         <Route path='/cocktail/:id' element={<Cocktail screenWidth={screenWidth} />} />
@@ -43,10 +43,6 @@ function App() {
         <Route path='/favorites' element={<FavoritesList />} />
         <Route path='/search' element={<SearchResult pattern={pattern} />} />
       </Routes>
-      {/* {
-        screenWidth > 996 ? '' :
-          <NavBar />
-      } */}
     </>
   );
 }

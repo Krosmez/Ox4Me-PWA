@@ -5,6 +5,7 @@
     position: relative;
     margin-top:50px;
     margin-bottom:100px;
+    z-index: -1;
 }
 
 .first,
