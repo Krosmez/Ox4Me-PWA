@@ -21,8 +21,8 @@
   "id": "/",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#BE995B",
-  "background_color": "#BE995B",
+  "theme_color": "#264729",
+  "background_color": "#264729",
   "shortcuts": [
     {
       "name": "Voir la liste",
