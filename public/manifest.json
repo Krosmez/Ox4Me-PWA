@@ -22,5 +22,43 @@
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#BE995B",
-  "background_color": "#BE995B"
+  "background_color": "#BE995B",
+  "shortcuts": [
+    {
+      "name": "Voir la liste",
+      "description": "Acces à la liste des cocktails",
+      "url": "/list",
+      "icons": [
+        {
+          "src": "logo1.png",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Vos favoris",
+      "description": "Acces à la liste des cocktails favoris",
+      "url": "/favorites",
+      "icons": [
+        {
+          "src": "logo1.png",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Voir aléatoire",
+      "description": "Acces au choix d'un cocktail aléatoire",
+      "url": "/random",
+      "icons": [
+        {
+          "src": "logo1.png",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    }
+  ]
 }

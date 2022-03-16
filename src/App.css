@@ -1,8 +1,8 @@
 :root {
-  --background: #191919;
+  --background: #10120D;
   --foreground: #FFF4E6;
-  --primary: #BE995B;
-  --secondary: #BE9B7B;
+  --primary: #264729;
+  --secondary: #264729;
   --gray: #C1C1C1;
   --active-primary: #FFF4E6;
   --light-red: #FF1B1B;
@@ -164,7 +164,7 @@ main {
 .cocktail-img {
   width: 100%;
   height: 23rem;
-  background-color: var(--secondary);
+  background-color: var(--foreground);
   border-radius: 5px;
 }
 
