@@ -43,4 +43,8 @@ export default class OxAPI {
     static async drinkOfTheDay() {
         return cacheEndpoint("/drink/today");
     }
+
+    static async getDrinksSuggestions(drinks) {
+        return cacheEndpoint("/drink/suggestions?" + drinks.map(id => "drinks=" + encodeURIComponent(id)).join("&"));
+    }
 }

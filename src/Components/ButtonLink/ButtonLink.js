@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import './buttonlink.css'
 
 export default function ButtonLink(
@@ -14,16 +14,16 @@ export default function ButtonLink(
         Children,
         ...props
     }
-) { console.log(asDefaultStyle);
+) {
     if (isLink) {
         // Display a default <a> anchor
         return (
             <Link to={to}
-                className={`${(asDefaultStyle && 'link') || ''} ${(variant && variant) || ''}`}
-                {...props}
+                  className={`${(asDefaultStyle && 'link') || ''} ${(variant && variant) || ''}`}
+                  {...props}
             >
                 {content}
-            </Link >
+            </Link>
         )
     } else if (isNavLink) {
         // Display a default <a> anchor but with 

@@ -90,6 +90,12 @@ main {
   color: var(--foreground);
 }
 
+.favorites {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 @media (min-width: 48em) {
 
   .daily-info {
