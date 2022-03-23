@@ -1,8 +1,12 @@
-# Un readme du feu de dieu !
+# L'application Ox4Me
+
+## Info
+
+[Nouveau design en préparation](https://www.figma.com/file/XiAm57aNxGeINGHyEwefQD/NewDesign?node-id=1%3A3)
 
 ## Lancer l'app
 
-### `npm start`
+### `npm start` (leul)
 
 ## TODO
 
