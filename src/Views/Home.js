@@ -56,7 +56,7 @@ export default function Home({ screenWidth }) {
                                     />
                                 </div>
                                 <div className='cocktail-img'>
-                                    <img src={`https://ox4me.herokuapp.com/static/images/drink/${drinkOfTheDay.id}.svg`} alt={`Illustration du cocktail ${drinkOfTheDay.name}`} loading='lazy' />
+                                    <img src={`https://ox4me.deta.dev/static/images/drink/${drinkOfTheDay.id}.svg`} alt={`Illustration du cocktail ${drinkOfTheDay.name}`} loading='lazy' />
                                 </div>
                             </div>
 

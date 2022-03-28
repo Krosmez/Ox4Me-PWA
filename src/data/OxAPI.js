@@ -1,7 +1,7 @@
 import Cache from './Cache';
 import StorageTools from "./StorageTools";
 
-const URL = "https://ox4me.herokuapp.com";
+const URL = "https://ox4me.deta.dev";
 
 const cache = {};
 for (let [endpoint, {data, timestamp}] of Object.entries(StorageTools.initCheckApiCache())) {

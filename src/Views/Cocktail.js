@@ -78,7 +78,7 @@ export default function Cocktail() {
                     </div>
 
                     <div className='cocktail-img'>
-                        <img src={`https://ox4me.herokuapp.com/static/images/drink/${params.id}.svg`} alt={`Illustration du cocktail ${drinkName}`} loading='lazy' />
+                        <img src={`https://ox4me.deta.dev/static/images/drink/${params.id}.svg`} alt={`Illustration du cocktail ${drinkName}`} loading='lazy' />
                     </div>
 
                 </section>
