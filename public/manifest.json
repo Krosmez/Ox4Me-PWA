@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ox4Me",
+  "name": "Ox4Me",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +8,57 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo1.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logo2.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "id": "/",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#264729",
+  "background_color": "#264729",
+  "shortcuts": [
+    {
+      "name": "Voir la liste",
+      "description": "Acces à la liste des cocktails",
+      "url": "/list",
+      "icons": [
+        {
+          "src": "logo1.png",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Vos favoris",
+      "description": "Acces à la liste des cocktails favoris",
+      "url": "/favorites",
+      "icons": [
+        {
+          "src": "logo1.png",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Voir aléatoire",
+      "description": "Acces au choix d'un cocktail aléatoire",
+      "url": "/random",
+      "icons": [
+        {
+          "src": "logo1.png",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    }
+  ]
 }

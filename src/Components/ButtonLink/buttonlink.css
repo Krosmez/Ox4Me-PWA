@@ -1,0 +1,83 @@
+/* Make general style for btn and links */
+
+.btn,
+.navlink,
+.link {
+    transition: .3s ease-in-out all;
+}
+
+.link-btn,
+.navlink,
+.link {
+    padding: 10px;
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.link-btn {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: var(--primary);
+    transition: .3s;
+}
+
+.link-btn:visited,
+.navlink:visited,
+.link:visited {
+    color: var(--foreground);
+}
+
+.navlink.active {
+    color: var(--active-primary);
+    border-bottom: 1px solid var(--active-primary);
+}
+
+.navlink:active,
+.link:active {
+    color: var(--secondary);
+    background-color: var(--foreground);
+}
+
+.btn {
+    padding: 10px;
+    color: var(--foreground);
+    background-color: var(--primary);
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+    text-align: center;
+    font-family: var(--secondary-font);
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.btn:disabled {
+    text-decoration: line-through;
+    color: var(--background);
+    background-color: var(--gray);
+}
+
+.btn:active {
+    color: var(--primary);
+    background-color: var(--foreground);
+}
+
+@media (min-width:62em) {
+
+    .navlink:hover,
+    .link:hover {
+        color: var(--background);
+        background-color: var(--foreground);
+    }
+
+    .btn:not(:disabled):hover {
+        color: var(--primary);
+        background-color: var(--foreground);
+    }
+
+    button[type='submit']:hover {
+        border-radius: 5px 0 0 5px;
+    }
+}

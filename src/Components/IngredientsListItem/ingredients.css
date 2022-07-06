@@ -1,0 +1,17 @@
+.ingredients-list-item {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    z-index: -1;
+}
+.ingredients-list-item:not(:last-child):before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    width: 65%;
+    border: 1px solid var(--secondary);
+}

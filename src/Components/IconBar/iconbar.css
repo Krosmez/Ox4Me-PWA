@@ -1,0 +1,106 @@
+/* Cocktail icons bar */
+.cocktail-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+input[type=checkbox] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+label::selection,
+label span::selection {
+    background-color: unset;
+    color: unset;
+}
+
+/* Cocktail Switch */
+
+.switch-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 14rem;
+    min-height: 40px;
+    padding: 4px;
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+}
+
+
+.switch-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+    width: 27px;
+    height: 27px;
+    border-radius: 50px;
+    background-color: var(--primary);
+    transition: .3s;
+}
+
+.switch-txt span {
+    position: absolute;
+    top: 6px;
+    transition: .3s;
+}
+
+.switch-txt span:first-child {
+    left: 6px;
+    opacity: 0;
+}
+
+.switch-txt span:last-child {
+    right: 6px;
+    opacity: 1;
+}
+
+.switch-label.checked {
+    background-color: var(--primary);
+}
+
+.switch-checkbox:checked+.switch-btn {
+    background-color: var(--background);
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+.switch-checkbox:checked+.switch-btn+.switch-txt span:first-child {
+    opacity: 1;
+}
+
+.switch-checkbox:checked+.switch-btn+.switch-txt span:last-child {
+    opacity: 0;
+}
+@media (min-width:67.5em) {
+    .switch-label {
+        min-width: 16rem;
+        font-size: 1.2em;
+    }
+    .switch-txt span {
+        top: 4px;
+    }
+}
+/* 
+  End Cocktail Switch -
+  - Cocktail like 
+  */
+
+.cocktail-icons .btn-heart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cocktail-icons .btn-heart svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--pinky-red);
+}
+
+/* End Cocktail Like */

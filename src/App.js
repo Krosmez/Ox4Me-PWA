@@ -1,25 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useState, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './Components/NavBar/NavBar';
+import Cocktail from './Views/Cocktail';
+import CocktailList from './Views/CocktailList';
+import FavoritesList from './Views/FavoritesList';
+import Home from './Views/Home';
+import RandomCocktail from './Views/RandomCocktail';
+import SearchResult from './Views/SearchResult';
 import './App.css';
 
 function App() {
+  const [pattern, setPattern] = useState("");
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  function getSearchValue(pattern) {
+    setPattern(pattern);
+  };
+
+  useEffect(() => {
+    function timeResize() {
+      setTimeout(
+        () => setScreenWidth(window.screen.width), 300
+      )
+    }
+    timeResize();
+    clearTimeout(timeResize);
+    window.addEventListener('resize', timeResize);
+    return () => {
+      window.removeEventListener('resize', timeResize);
+    }
+  }, [screenWidth]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar getSearchValue={getSearchValue} screenWidth={screenWidth} />
+      <Routes>
+        <Route path='/' element={<Home screenWidth={screenWidth} />} />
+        <Route path='/cocktail/:id' element={<Cocktail screenWidth={screenWidth} />} />
+        <Route path='/random' element={<RandomCocktail />} />
+        <Route path='/list' element={<CocktailList />} />
+        <Route path='/favorites' element={<FavoritesList />} />
+        <Route path='/search' element={<SearchResult pattern={pattern} />} />
+      </Routes>
+    </>
   );
 }
 
