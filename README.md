@@ -2,7 +2,7 @@
 
 ## Info
 
-[Nouveau design en préparation](https://www.figma.com/file/XiAm57aNxGeINGHyEwefQD/NewDesign?node-id=1%3A3)
+[Design Partiel](https://www.figma.com/file/XiAm57aNxGeINGHyEwefQD/NewDesign?node-id=1%3A3)
 
 ## Lancer l'app
 
