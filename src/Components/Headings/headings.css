@@ -1,4 +1,4 @@
-.title {
+h1, h2, h3, h4, h5, h6 {
     position: relative;
     font-family: var(--secondary-font);
 }
@@ -21,6 +21,10 @@ h1.title {
 h2.title {
     margin-bottom: 3rem;
     font-size: 3.2rem;
+}
+
+h2.card-title {
+    margin-bottom: unset;
 }
 
 h3.title {

@@ -1,55 +1,130 @@
-.cocktail-list-item {
+.cocktail-list,
+.suggestions {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cocktail-list-item {
+    position: relative;
+    flex: max(150px, 100%/3 + 0.1%);
+    border-radius: 2px;
+    box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 3px, rgba(255, 255, 255, 0.24) 0px 1px 2px;
+}
+
+/* gap replacement property for IOS under 14.1 */
+@supports not (gap:10px) {
+    .cocktail-list-item:nth-child(odd) {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.link-top img {
+    width: 100%;
+    height: 120px;
+    /* object-fit: cover; */
+    /*
+    Object-fit:contain; is only for DEV
+    Since we do not have proper imgs
+    we gotta keep that
+    */
+    object-fit: contain;
+}
+
+/*
+Height of card-aside must be like that :
+Parent Height - (top or padding+5px)
+*/
+
+.card-aside {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    margin-bottom: 10px;
+    height: 110px;
+    z-index: 9999;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 15px;
     color: var(--foreground);
     background-color: var(--primary);
-    border-radius: 5px;
 }
 
-.cocktail-list-link {
-    flex: 1;
-    color: var(--foreground);
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.cocktail-list-link:visited {
-    color: var(--foreground);
-}
-
-.icon-container {
+.like-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    margin-left: 10px;
+    justify-content: center;
 }
 
-.icon-container svg {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    fill: var(--background);
+.like-container svg {
+    width: 24px;
+    height: 24px;
 }
 
-.icon-container .like,
-.icon-container .like-fill {
+.like-container .like,
+.like-container .like-fill {
     fill: var(--pinky-red);
 }
 
-.icon-container svg:last-child {
-    margin-right: unset;
+.like-container svg:last-child {
     cursor: pointer;
 }
 
+.link-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70px;
+    padding: 10px 5px;
+    color: var(--foreground);
+    background-color: var(--primary);
+}
+
+.link-info h2 {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-style: var(--secondary-font);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.link-info span {
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 5px;
+    min-width: 15px;
+    min-height: 15px;
+    background-image: url('../../assets/img/check-unboxed.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.score,
+.link-info p {
+    font-size: 11px;
+}
+
+.link-info p:last-child {
+    font-style: italic;
+}
+
 @media (min-width:48em) {
-    .cocktail-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
 
     .cocktail-list-item {
         flex: max(200px, 100%/3 + 0.1%);

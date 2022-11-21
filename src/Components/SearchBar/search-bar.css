@@ -1,0 +1,51 @@
+/* SearchBar */
+
+.search-form{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.search-form svg {
+    fill: var(--primary);
+    width: 20px;
+    height: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding:5px 10px;
+    min-height: 35px;
+    border: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    outline: 1px solid transparent;
+    transition: ease-in-out all .3s;
+}
+
+.search-input::placeholder {
+    color: var(--primary);
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    min-height: 35px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    outline: 0;
+}
+
+/* Disable default cross apparition for input search */
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
