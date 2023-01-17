@@ -2,8 +2,9 @@ import "./App.css";
 
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
+import BottomNavBar from "./Components/BottomNavBar/BottomNavBar";
 import Cocktail from "./Views/Cocktail";
 import CocktailList from "./Views/CocktailList";
 import FavoritesList from "./Views/FavoritesList";
@@ -38,6 +39,11 @@ function App() {
         <Route path="/favorites" element={<FavoritesList />} />
         <Route path="/search" element={<SearchResult pattern={pattern} />} />
       </Routes>
+      {dimensions.width >= 768 ? (
+        <div> This is a new component</div>
+      ) : (
+        <BottomNavBar />
+      )}
     </>
   );
 }

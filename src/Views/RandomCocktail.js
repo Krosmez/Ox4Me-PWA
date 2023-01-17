@@ -61,7 +61,8 @@ export default function RandomCocktail() {
               />
             );
           } else {
-            return <ButtonLink key={index} disabled content={button.text} />;
+            return "";
+            // return <ButtonLink key={index} disabled content={button.text} />;
           }
         })}
       </div>

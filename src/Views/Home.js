@@ -8,7 +8,7 @@ import LoadingScreen from "../Components/LoadingScreen/LoadingScreen";
 import OxAPI from "../data/OxAPI";
 import StorageTools from "../data/StorageTools";
 
-export default function Home({ screenWidth }) {
+export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [drinkOfTheDay, setDrinkOfTheDay] = useState(false);
   const [allDrinks, setAllDrinks] = useState([]);

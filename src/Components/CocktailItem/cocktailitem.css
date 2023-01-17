@@ -60,7 +60,7 @@ Parent Height - (top or padding+5px)
     min-width: 30px;
     min-height: 30px;
     border-radius: 15px;
-    color: var(--foreground);
+    color: var(--background);
     background-color: var(--primary);
 }
 
@@ -90,7 +90,7 @@ Parent Height - (top or padding+5px)
     justify-content: center;
     min-height: 70px;
     padding: 10px 5px;
-    color: var(--foreground);
+    color: var(--background);
     background-color: var(--primary);
 }
 

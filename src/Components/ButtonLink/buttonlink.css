@@ -10,7 +10,7 @@
 .navlink,
 .link {
     padding: 10px;
-    color: var(--foreground);
+    color: var(--background);
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 600;
@@ -42,7 +42,7 @@
 
 .btn {
     padding: 10px;
-    color: var(--foreground);
+    color: var(--background);
     background-color: var(--primary);
     border: 0;
     border-radius: 5px;
