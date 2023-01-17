@@ -25,7 +25,7 @@ label span::selection {
     justify-content: center;
     position: relative;
     min-width: 14rem;
-    min-height: 40px;
+    min-height: 32px;
     padding: 4px;
     border-radius: 50px;
     border: 1px solid var(--primary);
@@ -37,8 +37,8 @@ label span::selection {
     top: 5px;
     left: 5px;
     z-index: 2;
-    width: 27px;
-    height: 27px;
+    width: 20px;
+    height: 20px;
     border-radius: 50px;
     background-color: var(--primary);
     transition: .3s;
@@ -46,7 +46,7 @@ label span::selection {
 
 .switch-txt span {
     position: absolute;
-    top: 6px;
+    top: 3px;
     transition: .3s;
 }
 
@@ -77,18 +77,21 @@ label span::selection {
 .switch-checkbox:checked+.switch-btn+.switch-txt span:last-child {
     opacity: 0;
 }
+
 @media (min-width:67.5em) {
     .switch-label {
         min-width: 16rem;
         font-size: 1.2em;
     }
+
     .switch-txt span {
         top: 4px;
     }
 }
-/* 
+
+/*
   End Cocktail Switch -
-  - Cocktail like 
+  - Cocktail like
   */
 
 .cocktail-icons .btn-heart {

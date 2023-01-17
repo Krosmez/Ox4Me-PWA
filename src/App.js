@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 import BottomNavBar from "./Components/BottomNavBar/BottomNavBar";
-import Cocktail from "./Views/Cocktail";
+import Cocktail from "./Views/CocktailView/Cocktail";
 import CocktailList from "./Views/CocktailList";
 import FavoritesList from "./Views/FavoritesList";
 import Home from "./Views/Home";
@@ -18,8 +18,8 @@ function App() {
   const [pattern, setPattern] = useState("");
   const { dimensions } = useResize();
 
-  function getSearchValue(pattern) {
-    setPattern(pattern);
+  function getSearchValue(searchedValue) {
+    setPattern(searchedValue);
   }
 
   return (
@@ -29,7 +29,7 @@ function App() {
         screenWidth={dimensions.width}
       />
       <Routes>
-        <Route path="/" element={<Home screenWidth={dimensions.width} />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="/cocktail/:id"
           element={<Cocktail screenWidth={dimensions.width} />}

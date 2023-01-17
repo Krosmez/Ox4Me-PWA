@@ -1,0 +1,117 @@
+/* Cocktail/:id View */
+
+.cocktail-view {
+    font-family: var(--secondary-font);
+    font-weight: 400;
+}
+
+.cocktail-info .--top,
+.cocktail-top {
+    margin-bottom: 5%;
+}
+
+.cocktail-heading {
+    display: flex;
+    align-items: start;
+    gap: 5%;
+}
+
+.cocktail-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5px;
+    border: 0;
+    border-radius: 2px;
+    color: var(--background);
+    background-color: var(--foreground);
+}
+
+.cocktail-back-btn svg {
+    width: 24px;
+    height: 24px;
+    transform: rotate(-90deg);
+    color: var(--background);
+}
+
+.cocktail-info .title {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.cocktail-img {
+    position: relative;
+    width: 100%;
+    height: 23rem;
+    background-color: var(--foreground);
+    border-radius: 2px;
+}
+
+.cocktail-category {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    padding: 5px 10px;
+    font-style: italic;
+    font-weight: 600;
+    font-size: .9em;
+    border-radius: 0 0 5px 5px;
+    color: var(--secondary);
+    background-color: var(--background);
+}
+
+.cocktail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.cocktail-bottom h3 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cocktail-bottom *:not(h3) {
+    font-family: var(--primary-font);
+}
+
+@media (min-width:67.5em) {
+    .cocktail-view {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .cocktail-top {
+        margin-bottom: unset;
+    }
+
+    .cocktail-top h2,
+    .cocktail-bottom h3 {
+        font-size: 3em;
+    }
+
+    .cocktail-info div:first-child p {
+        font-size: 1.5em;
+    }
+
+    .cocktail-top {
+        min-width: 40%;
+    }
+
+    .cocktail-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 50%;
+        border-left: 2px solid var(--secondary);
+    }
+
+    .cocktail-bottom *:not(h3) {
+        font-size: 1.1em;
+    }
+}
