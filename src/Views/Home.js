@@ -7,14 +7,14 @@ import Headings from "../Components/Headings/Headings";
 import LoadingScreen from "../Components/LoadingScreen/LoadingScreen";
 import OxAPI from "../data/OxAPI";
 import StorageTools from "../data/StorageTools";
+import useStorage from "../customHooks/useStorage";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [drinkOfTheDay, setDrinkOfTheDay] = useState(false);
   const [allDrinks, setAllDrinks] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
-
-  const favoriteDrink = StorageTools.initCheckFavoritesDrinks();
+  const { favorites } = useStorage();
 
   function initLoadingTime() {
     setTimeout(() => setIsLoading(false), 300);
@@ -22,7 +22,7 @@ export default function Home() {
 
   function updateLikeAndSuggestions() {
     setSuggestions([]);
-    OxAPI.getDrinksSuggestions(favoriteDrink).then((suggestDrink) => {
+    OxAPI.getDrinksSuggestions(favorites).then((suggestDrink) => {
       setSuggestions(
         allDrinks
           .filter((d) => suggestDrink.some(({ id }) => d.id === id))
@@ -102,7 +102,7 @@ export default function Home() {
           </section>
           {
             // Oh wow ! I need optimisation here !
-            favoriteDrink < 1 ? (
+            favorites < 1 ? (
               <></>
             ) : (
               <section className="container section-suggestions">

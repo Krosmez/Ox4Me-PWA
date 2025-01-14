@@ -1,29 +1,23 @@
 import "./cocktailitem.css";
 
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Headings from "../Headings/Headings";
-import StorageTools from "../../data/StorageTools";
+import useStorage from "../../customHooks/useStorage";
 import { ReactComponent as Heart } from "../../assets/img/heart.svg";
 import { ReactComponent as HeartFill } from "../../assets/img/heart-fill.svg";
 
-export default function CocktailItem({ data, onLikeDislike = () => {} }) {
-  const { id, name, score, category } = data;
-
-  const isConsumed = StorageTools.containsConsumedDrink(id);
-  const [isLike, setIsLike] = useState(StorageTools.containsFavoriteDrink(id));
-
-  function addRemoveLike() {
-    if (!StorageTools.containsFavoriteDrink(id)) {
-      StorageTools.addFavoriteDrink(id);
-      setIsLike(true);
-    } else {
-      StorageTools.removeFavoriteDrink(id);
-      setIsLike(false);
-    }
-    onLikeDislike();
-  }
+export default function CocktailItem({
+  id,
+  name,
+  score,
+  category,
+  onLikeDislike = () => {},
+}) {
+  const { favorites, consumed, addFavoriteDrink, removeFavoriteDrink } =
+    useStorage();
+  const isConsumed = consumed.includes(id);
 
   return (
     <li className="cocktail-list-item">
@@ -59,10 +53,10 @@ export default function CocktailItem({ data, onLikeDislike = () => {} }) {
       <div className="card-aside">
         {score && <div className="score">{(score * 100).toFixed(0)}%</div>}
         <div className="like-container">
-          {isLike ? (
-            <HeartFill onClick={addRemoveLike} />
+          {favorites?.includes(id) ? (
+            <HeartFill onClick={removeFavoriteDrink} />
           ) : (
-            <Heart onClick={addRemoveLike} />
+            <Heart onClick={addFavoriteDrink} />
           )}
         </div>
       </div>
